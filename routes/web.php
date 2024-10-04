@@ -7,9 +7,9 @@ use App\Http\Controllers\Landing\NewsController;
 use App\Models\Research;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('sitemap.xml', function () {
     return response()->file(public_path('sitemap.xml'));
@@ -21,7 +21,7 @@ Route::group(['namespace' => 'Landing', 'as' => 'landing.'], function() {
 
     // Tentang Upu
         // Sejarah
-        Route::view('/sejarah', 'landing.about.history')->name('history');
+        // Route::view('/sejarah', 'landing.about.history')->name('history');
 
         // Visi Misi
         Route::view('/visi-misi', 'landing.about.purpose')->name('purpose');

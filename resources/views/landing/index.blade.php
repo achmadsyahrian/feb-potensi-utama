@@ -9,16 +9,14 @@
                     <!-- Breaking News Widget -->
                     <div class="breaking-news-ticker d-flex flex-wrap align-items-center">
                         <div class="title">
-                            <h6>Trending</h6>
+                            <h6>Informasi</h6>
                         </div>
                         <div id="breakingNewsTicker" class="ticker">
-                            <ul>
-                                <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                                        malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum.</a></li>
-                                <li><a href="#">Welcome to Colorlib Family.</a></li>
-                                <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                                        malesuada lorem maximus mauris scelerisque</a></li>
-                            </ul>
+                           <ul>
+                              <li><a href="#">Pendaftaran Mahasiswa Baru masih dibuka hingga akhir bulan ini.</a></li>
+                              <li><a href="#">Seminar Nasional tentang Teknologi Informasi akan dilaksanakan minggu depan.</a></li>
+                              <li><a href="#">Pengumuman: Pembayaran SPP semester genap telah dibuka.</a></li>
+                           </ul>
                         </div>
                     </div>
                 </div>
@@ -800,11 +798,11 @@
     <div class="top-news-area section-padding-100">
         <div class="container">
             <div class="row">
-               <div class="col-12">
-                  <div class="elements-title mb-30 text-center">
-                     <h1>Pengumuman</h1>
-                  </div>
-               </div>
+                <div class="col-12">
+                    <div class="elements-title mb-30 text-center">
+                        <h1>Pengumuman</h1>
+                    </div>
+                </div>
             </div>
             <div class="row">
 
@@ -930,63 +928,80 @@
         </div>
     </div>
 
-    <section class="video-area bg-img bg-overlay bg-fixed" style="background-image: url({{asset('landing/assets/img/bg-img/texture-flower.jpg')}});">
+    <div class="col-12">
+        <div class="elements-title mb-30 text-center">
+            <h2>Keanggotaan dan Kerjasama</h2>
+        </div>
+    </div>
+    <section class="video-area bg-img bg-fixed"
+        style="background-image: url({{ asset('landing/assets/img/bg-img/texture-flower.jpg') }});">
 
-      <!-- Video Slideshow -->
-      <div class="video-slideshow py-5">
-          <div class="container">
-              <div class="row">
-                  <div class="col-12">
-                      <!-- Video Slides -->
-                      <div class="video-slides owl-carousel">
+        <!-- Video Slideshow -->
+        <div class="video-slideshow py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="video-slides owl-carousel">
 
-                          <!-- Single News Area -->
-                          <div class="single-blog-post style-3">
-                              <div class="blog-thumbnail">
-                                  <a href="#"><img src="{{asset('landing/assets/img/kerjasama-img/Logo-BNI.png')}}" style="width: 200px;" alt=""></a>
-                              </div>
-                          </div>
+                            <!-- Single News Area -->
+                            <div class="single-blog-post style-3">
+                                <div class="blog-thumbnail">
+                                    <a href="#" ><img
+                                            src="{{ asset('landing/assets/img/kerjasama-img/Logo-BNI.png') }}"
+                                            style="width:200px; height: 100px; object-fit:contain;" alt=""></a>
+                                </div>
+                            </div>
 
-                          <!-- Single News Area -->
-                          <div class="single-blog-post style-3">
-                              <div class="blog-thumbnail">
-                                 <a href="#"><img src="{{asset('landing/assets/img/kerjasama-img/Logo_bank_mega_syariah_new.png')}}" style="width: 200px;" alt=""></a>
-                             </div>
-                          </div>
+                            <!-- Single News Area -->
+                            <div class="single-blog-post style-3">
+                                <div class="blog-thumbnail">
+                                    <a href="#"><img
+                                            src="{{ asset('landing/assets/img/kerjasama-img/Logo_bank_mega_syariah_new.png') }}"
+                                            style="width:200px; height: 100px; object-fit:contain;" alt=""></a>
+                                </div>
+                            </div>
 
-                          <!-- Single News Area -->
-                          <div class="single-blog-post style-3">
-                              <div class="blog-thumbnail">
-                                 <a href="#"><img src="{{asset('landing/assets/img/kerjasama-img/Logo-BNI.png')}}" style="width: 200px;" alt=""></a>
-                             </div>
-                          </div>
+                            <!-- Single News Area -->
+                            <div class="single-blog-post style-3">
+                                <div class="blog-thumbnail">
+                                    <a href="#"><img
+                                            src="{{ asset('landing/assets/img/kerjasama-img/bank_muamalat.png') }}"
+                                            style="width:200px; height: 100px; object-fit:contain;" alt=""></a>
+                                </div>
+                            </div>
 
-                          <!-- Single News Area -->
-                          <div class="single-blog-post style-3">
-                              <div class="blog-thumbnail">
-                                 <a href="#"><img src="{{asset('landing/assets/img/kerjasama-img/Logo-BNI.png')}}" style="width: 200px;" alt=""></a>
-                             </div>
-                          </div>
+                            <!-- Single News Area -->
+                            <div class="single-blog-post style-3">
+                                <div class="blog-thumbnail">
+                                    <a href="#"><img
+                                            src="{{ asset('landing/assets/img/kerjasama-img/afebsi.png') }}"
+                                            style="width:200px; height: 100px; object-fit:contain;" alt=""></a>
+                                </div>
+                            </div>
 
-                          <!-- Single News Area -->
-                          <div class="single-blog-post style-3">
-                              <div class="blog-thumbnail">
-                                 <a href="#"><img src="{{asset('landing/assets/img/kerjasama-img/Logo-BNI.png')}}" style="width: 200px;" alt=""></a>
-                             </div>
-                          </div>
+                            <!-- Single News Area -->
+                            <div class="single-blog-post style-3">
+                                <div class="blog-thumbnail">
+                                    <a href="#"><img
+                                            src="{{ asset('landing/assets/img/kerjasama-img/Logo-Ikatan-Akuntan-Indonesia.png') }}"
+                                            style="width:200px; height: 100px; object-fit:contain;" alt=""></a>
+                                </div>
+                            </div>
 
-                          <!-- Single News Area -->
-                          <div class="single-blog-post style-3">
-                              <div class="blog-thumbnail">
-                                 <a href="#"><img src="{{asset('landing/assets/img/kerjasama-img/Logo-BNI.png')}}" style="width: 200px;" alt=""></a>
-                             </div>
-                          </div>
+                            <!-- Single News Area -->
+                            <div class="single-blog-post style-3">
+                                <div class="blog-thumbnail">
+                                    <a href="#"><img
+                                            src="{{ asset('landing/assets/img/kerjasama-img/asbisindo.png') }}"
+                                            style="width:200px; height: 100px; object-fit:contain;" alt=""></a>
+                                </div>
+                            </div>
 
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
-    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 @endsection

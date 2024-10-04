@@ -11,42 +11,34 @@
                     <!-- Footer Nav -->
                     <div class="footer-nav">
                         <ul>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Closed Captioning</a></li>
-                            <li><a href="#">Site Map</a></li>
+                            <li><a href="#">Kontak Fakultas</a></li>
+                            <li><a href="#">Berita & Informasi</a></li>
+                            <li><a href="#">Administrasi</a></li>
                         </ul>
                     </div>
                     <!-- Social Info -->
                     <div class="footer-social-info">
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="pinterest"><i
-                                class="fa fa-pinterest" aria-hidden="true"></i></a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="facebook"><i
-                                class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="twitter"><i
-                                class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="dribbble"><i
-                                class="fa fa-dribbble" aria-hidden="true"></i></a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="behance"><i
-                                class="fa fa-behance" aria-hidden="true"></i></a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="linkedin"><i
-                                class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/official_upu/" data-toggle="tooltip" data-placement="top" title="instagram">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.facebook.com/potensiutamamedan/about" data-toggle="tooltip" data-placement="top" title="facebook">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@official_upu?lang=en" data-toggle="tooltip" data-placement="top" title="tiktok">
+                            <i class="fab fa-tiktok" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@PotensiUtamaUniversitas" data-toggle="tooltip" data-placement="top" title="youtube">
+                            <i class="fa fa-youtube" aria-hidden="true"></i>
+                        </a>
                     </div>
 
-                    <p class="mb-15">Nullam lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum.
-                        Etiam pretium turpis eget nibh laoreet iaculis. Proin ac urna at lectus volutpat lobortis.
-                        Vestibulum venenatis iaculis diam vitae lobortis. Donec tincidunt viverra elit, sed consectetur
-                        est pr etium ac. Mauris nec mauris tellus. </p>
+                    <p class="mb-15">
+                        Bergabunglah dengan kami untuk memulai perjalanan akademis Anda di salah satu perguruan tinggi terbaik di Sumatera Utara.
+                    </p>
 
-                    <!-- Copywrite Text -->
-                    <p class="copywrite-text"><a href="#">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;
-                            <script>
-                                document.write(new Date().getFullYear());
-                            </script> All rights reserved | This template is made with <i
-                                class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                                target="_blank">Colorlib</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    <p class="copywrite-text">
+                        <a href="http://potensi-utama.ac.id/"> Copyright &copy; 2024 Universitas Potensi Utama. All rights reserved </a>
+                    </p>
                 </div>
             </div>
         </div>
