@@ -13,7 +13,7 @@
 
     <title>@yield('title', 'Fakultas Ekonomi & Bisnis | Universitas Potensi Utama')</title>
 
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" href="{{asset('landing/assets/img/logo-img/Logopotensiutama.png')}}">
 
     <link rel="stylesheet" href="{{asset('landing/assets/style.css')}}">
 

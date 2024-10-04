@@ -1414,7 +1414,7 @@ img {
 .single-accordion h6 {
   margin-bottom: 0; }
   .single-accordion h6 a {
-    background-color: #000000;
+    background-color: #439607; /*warna*/
     border-radius: 0;
     color: #ffffff;
     display: block;
@@ -1443,7 +1443,8 @@ img {
       -webkit-transition-duration: 500ms;
       transition-duration: 500ms;
       background-color: transparent;
-      color: #232323; }
+      color: #232323; 
+    }
       .single-accordion h6 a.collapsed span {
         color: #000000; }
         .single-accordion h6 a.collapsed span.accor-close {

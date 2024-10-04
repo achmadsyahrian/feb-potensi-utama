@@ -1,35 +1,13 @@
 @extends('landing.layouts.app')
 {{-- Head --}}
-@section('title', 'Visi Misi - Universitas Potensi Utama')
-@section('meta_description', 'Mulai dari kursus komputer sederhana hingga menjadi universitas terkemuka di Medan, ikuti perjalanan inspiratif Universitas Potensi Utama. Temukan bagaimana kami tumbuh dan berkembang, serta komitmen kami dalam mencetak generasi muda yang berkualitas.')
-@section('meta_keywords', 'visi upu, misi potensi utama, visi misi upu, visi misi potensi utama')
-@section('canonical', 'https://potensi-utama.ac.id/visi-misi')
+@section('title', 'Visi Misi - Fakultas Ekonomi dan Bisnis')
+@section('meta_description', 'Visi Program Studi Ekonomi Syariah merupakan pernyataan yang berorientasi ke masa depan tentang apa yang diharapkan oleh Program Studi Ekonomi Syariah yang dapat dipaparkan secara jelas.')
+@section('meta_keywords', 'visi feb upu, misi feb potensi utama, visi misi feb, visi misi feb potensi utama')
+@section('canonical', 'https://feb.potensi-utama.ac.id/visi-misi')
 
 @section('content')
 
-    <!-- ##### Breaking News Area Start ##### -->
-    <section class="breaking-news-area">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <!-- Breaking News Widget -->
-                    <div class="breaking-news-ticker d-flex flex-wrap align-items-center">
-                        <div class="title">
-                            <h6>Informasi</h6>
-                        </div>
-                        <div id="breakingNewsTicker" class="ticker">
-                           <ul>
-                              <li><a href="#">Pendaftaran Mahasiswa Baru masih dibuka hingga akhir bulan ini.</a></li>
-                              <li><a href="#">Seminar Nasional tentang Teknologi Informasi akan dilaksanakan minggu depan.</a></li>
-                              <li><a href="#">Pengumuman: Pembayaran SPP semester genap telah dibuka.</a></li>
-                           </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ##### Breaking News Area End ##### -->
+    @include('landing.partials.breaking-news')
 
     <!-- ##### Post Details Title Area Start ##### -->
     <div class="post-details-title-area bg-overlay clearfix" style="background-image: url({{asset('landing/assets/img/building-img/gedung-b.jpg')}})">

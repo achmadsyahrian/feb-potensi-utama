@@ -26,11 +26,15 @@ Route::group(['namespace' => 'Landing', 'as' => 'landing.'], function() {
         // Visi Misi
         Route::view('/visi-misi', 'landing.about.purpose')->name('purpose');
 
+        // Program Studi
+            // Ekonomi Syariah
+            Route::view('/program-studi/ekonomi-syariah', 'landing.academic.economy')->name('academic.economy');
+
         // Akreditasi
-        Route::view('/akreditasi', 'landing.about.accreditation')->name('accreditation');
+        // Route::view('/akreditasi', 'landing.about.accreditation')->name('accreditation');
 
         // Fasilitas
-        Route::view('/fasilitas', 'landing.about.facility')->name('facility');
+        // Route::view('/fasilitas', 'landing.about.facility')->name('facility');
 
     // Informasi
         // Berita

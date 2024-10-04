@@ -29,12 +29,12 @@
                                 <li><a href="#">Tentang Fakultas</a>
                                     <ul class="dropdown">
                                         {{-- <li><a href="catagory.html">Sejarah</a></li> --}}
-                                        <li><a href="index.html">Visi Misi</a></li>
+                                        <li><a href="{{route('landing.purpose')}}">Visi Misi</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#">Program Studi</a>
                                     <ul class="dropdown">
-                                        <li><a href="#">Ekonomi Syariah</a></li>
+                                        <li><a href="{{route('landing.academic.economy')}}">Ekonomi Syariah</a></li>
                                         <li><a href="#">Perbankan Syariah</a></li>
                                         <li><a href="#">Akuntansi</a></li>
                                         <li><a href="#">Manajemen</a></li>
