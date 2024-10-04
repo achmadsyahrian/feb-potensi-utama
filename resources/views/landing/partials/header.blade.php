@@ -35,9 +35,9 @@
                                 <li><a href="#">Program Studi</a>
                                     <ul class="dropdown">
                                         <li><a href="{{route('landing.academic.economy')}}">Ekonomi Syariah</a></li>
-                                        <li><a href="#">Perbankan Syariah</a></li>
-                                        <li><a href="#">Akuntansi</a></li>
-                                        <li><a href="#">Manajemen</a></li>
+                                        <li><a href="{{route('landing.academic.banking')}}">Perbankan Syariah</a></li>
+                                        <li><a href="{{route('landing.academic.accounting')}}">Akuntansi</a></li>
+                                        <li><a href="{{route('landing.academic.management')}}">Manajemen</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#">Berita & Informasi</a></li>
