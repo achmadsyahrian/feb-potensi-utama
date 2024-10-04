@@ -67,7 +67,7 @@
                                             <!-- Blog Content -->
                                             <div class="blog-content">
                                                 <span class="post-date">June 20, 2018</span>
-                                                <a href="#" class="post-title">Elon Musk: Tesla worker admitted to sabotage</a>
+                                                <a href="/berita/detail" class="post-title">Elon Musks: Tesla worker admitted to sabotage</a>
                                                 <a href="#" class="post-author mb-30">By Michael Smith</a>
                                                 <p>Nullam lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum. Etiam pretium turpis eget nibh laoreet iaculis. Proin ac urna at lectus volutpat lobortis. Vestibulum venenatis iaculis diam vitae lobortis. Donec tincidunt viverra elit, sed consectetur est pr etium ac. Mauris nec mauris tellus. </p>
                                             </div>

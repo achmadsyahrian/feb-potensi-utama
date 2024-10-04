@@ -45,6 +45,8 @@ Route::group(['namespace' => 'Landing', 'as' => 'landing.'], function() {
     // Informasi
         // Berita
         Route::get('/berita', [NewsController::class, 'index'])->name('news.index');
+        Route::view('/berita/detail', 'landing.posts.detail')->name('academic.management');
+        
         Route::get('/berita/{slug}', [NewsController::class, 'show'])->name('news.show');
 
         // Pengumuman

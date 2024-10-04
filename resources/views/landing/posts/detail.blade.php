@@ -1,6 +1,6 @@
 @extends('landing.layouts.app')
 {{-- Head --}}
-@section('title', $title . ' - Universitas Potensi Utama')
+{{-- @section('title', $title . ' - Universitas Potensi Utama')
 @section('meta_description',  Str::limit($post->title, 100))
 @if ($title == 'Berita')
     @section('meta_keywords', 'berita upu, berita potensi utama, berita pendidikan, berita kampus upu')
@@ -11,197 +11,135 @@
 @elseif($title == 'Pengabdian Masyarakat')
     @section('meta_keywords', 'abdimas upu, abdimas potensi utama, abdimas pendidikan, abdimas kampus upu, pengabdian masyarakat potensi utama')
     @section('canonical', 'https://potensi-utama.ac.id/pengabdian-masyarakat/' . $post->slug)
-@endif
+@endif --}}
 
-@section('app')
-    <main id="main">
+@section('content')
 
-        <!-- ======= Breadcrumbs ======= -->
-        <div class="breadcrumbs d-flex align-items-center"
-            style="background-image: url({{ asset('landing/assets/img/breadcrumbs/gedung-upu.jpg') }});">
-            <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+    @include('landing.partials.breaking-news')
 
-                <h2>{{$title}}</h2>
-                <ol>
-                    <li><a href="{{ route('landing.home') }}">Beranda</a></li>
-                    <li><a href="{{ route($route . '.index') }}">{{$title}}</a></li>
-                    <li>Detail</li>
-                </ol>
-
-            </div>
-        </div>
-        <!-- End Breadcrumbs -->
-
-        <!-- ======= Berita Section ======= -->
-        <section id="news" class="news">
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-                <div class="row gy-4">
-                    <!-- Konten Utama -->
-                    <div class="col-xl-8 content" data-aos="fade-up" data-aos-delay="200">
-                        <article class="news-details">
-
-                            <div class="post-img">
-                                @if ($post->thumbnail)
-                                    <img src="{{ asset($post->thumbnail) }}" alt=""
-                                    style="width: 850px; height:500px; object-fit:cover;" class="img-fluid">
-                                @endif
-                            </div>
-
-                            <h2 class="title">{{ $post->title }}</h2>
-
-                            <div class="meta-top">
-                                <ul>
-                                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a
-                                            href="#">{{ $post->user->name }}</a></li>
-                                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a
-                                            href="#"><time
-                                                datetime="2020-01-01">{{ $post->updated_at->format('M j, Y') }}</time></a>
-                                    </li>
-                                </ul>
-                            </div><!-- End meta top -->
-                            <style>
-                                .content img {
-                                    max-width: 100%;
-                                    width: 500px;
-                                    height: 300px;
-                                    object-fit: cover;
-                                    display: block;
-                                }
-
-                                .content .attachment__caption .attachment__name {
-                                    display: block;
-                                    margin: 0 auto;
-                                }
-
-                                .content .attachment__caption .attachment__size {
-                                    display: none;
-                                }
-
-                                .content h1 {
-                                    font-size: 22px;
-                                    margin-top: 10px;
-                                }
-                                .content .files-name:hover {
-                                    color: red;
-                                }
-                            </style>
-                            <div class="content">
-                                {!! $post->content !!}
-
-                                {{-- File Tambahan yg bisa diunduh users --}}
-                                @if ($post->files->isNotEmpty())
-                                    <h3>File Tambahan</h3>
-                                    <ul>
-                                        @foreach($post->files as $file)
-                                            <li>
-                                                <a class="files-name" href="{{asset($file->file_path)}}" download>{{ $file->file_name }}</a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                @endif
-                            </div>
-
-                            <div class="meta-bottom">
-                                <i class="bi bi-folder"></i>
-                                <ul class="cats">
-                                    <li>
-                                        <a
-                                            href="{{ route($route . '.index', ['category' => $post->category->slug]) }}">
-                                            {{ $post->category->name }}
-                                        </a>
-                                    </li>
-                                </ul>
-
-                                <i class="bi bi-tags"></i>
-                                <ul class="tags">
-                                    @forelse ($post->tags as $tag)
-                                        <li>
-                                            <a
-                                                href="{{ route($route . '.index', [
-                                                    'category' => request('category'),
-                                                    'tag' => $tag->slug,
-                                                    'search' => request('search'),
-                                                ]) }}">
-                                                {{ $tag->name }}
-                                            </a>
-                                        </li>
-                                    @empty
-                                        <li><a>Tidak ada tags</a></li>
-                                    @endforelse
-                                </ul>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <!-- Sidebar -->
-                    <div class="col-xl-4" data-aos="fade-up" data-aos-delay="300">
-                        <div class="sidebar">
-
-                            <div class="sidebar-item search-form">
-                                <h3 class="sidebar-title">Pencarian</h3>
-                                <form action="{{ route($route . '.index') }}" method="GET" class="mt-3">
-                                    <input type="text" name="search" placeholder="Masukkan judul"
-                                        value="{{ request('search') }}">
-                                    <button type="submit"><i class="bi bi-search text-white"></i></button>
-                                </form>
-                            </div>
-
-                            <div class="sidebar-item recent-posts">
-                                <h3 class="sidebar-title">Recent Posts</h3>
-
-                                <div class="mt-3">
-
-                                    @foreach ($dataRecent as $item)
-                                        <div class="post-item mt-3">
-                                            @if ($item->thumbnail)
-                                                <img src="{{ asset($item->thumbnail) }}" alt=""
-                                                style="width: 100px; height:60px; object-fit:cover;">
-                                            @else
-                                                <img src="{{ asset('landing/assets/img/Logopotensiutama.png') }}" alt=""
-                                                    style="width: 100px; height:60px; object-fit:cover;">
-                                            @endif
-                                            <div>
-                                                <h4><a
-                                                        href="{{ route($route . '.show', $item->slug) }}">{{ \Illuminate\Support\Str::limit($item->title, 40, '...') }}</a>
-                                                </h4>
-                                                <time datetime="{{ $item->updated_at->format('Y-m-d') }}">
-                                                    {{ $item->updated_at->format('M j, Y') }}
-                                                </time>
-                                            </div>
-                                        </div>
-                                    @endforeach
-
-                                </div>
-
-                            </div>
-
-                            <div class="sidebar-item tags">
-                                <h3 class="sidebar-title">Tags</h3>
-                                <ul class="mt-3">
-                                    @foreach ($tags as $tag)
-                                        <li>
-                                            <a
-                                                href="{{ route($route . '.index', [
-                                                    'category' => request('category'),
-                                                    'tag' => $tag->slug,
-                                                    'search' => request('search'),
-                                                ]) }}">
-                                                {{ $tag->name }}
-                                            </a>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </div><!-- End sidebar tags-->
-
+    <div class="post-details-title-area bg-overlay clearfix" style="background-image: url({{asset('landing/assets/img/building-img/gedung-b.jpg')}})">
+        <div class="container-fluid h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 col-lg-8">
+                    <!-- Post Content -->
+                    <div class="post-content">
+                        <p class="tag"><span>Berita</span></p>
+                        <p class="post-title">Judul Berita Disini</p>
+                        <div class="d-flex align-items-center">
+                            <span class="post-date mr-30">June 20, 2018</span>
+                            <span class="post-date">By Achmad Syahrian</span>
                         </div>
                     </div>
                 </div>
-
             </div>
-        </section>
-        <!-- End Berita -->
+        </div>
+    </div>
 
-    </main>
+    <section class="post-news-area section-padding-100-0 mb-70">
+        <div class="container">
+            <div class="row justify-content-center">
+                <!-- Post Details Content Area -->
+                <div class="col-12 col-lg-8">
+                    <div class="post-details-content mb-100">
+                        <p>Nullam lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum. Etiam pretium turpis eget nibh laoreet iaculis. Proin ac urna at lectus volutpat lobortis. Vestibulum venenatis iaculis diam vitae lobortis. Donec tincidunt viverra elit, sed consectetur est pr etium ac.</p>
+                        <p>Mauris nec mauris tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elit nisl, faucibus eu tempus vel, imperdiet at felis. Sed sed nibh et augue feugiat pharetra. Praesent ultrices nec tortor et gravida. Sed id rhoncus est. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur vitae luctus turpis. Maecenas diam ex, mattis vel dolor ut, fermentum consectetur ex.</p>
+                        <img class="mb-30" src="{{asset('landing/assets/img/bg-img/31.jpg')}}" alt="">
+                        <p>Nullam lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum. Etiam pretium turpis eget nibh laoreet iaculis. Proin ac urna at lectus volutpat lobortis. Vestibulum venenatis iaculis diam vitae lobortis. Donec tincidunt viverra elit, sed consectetur est pr etium ac.</p>
+                        <p>Mauris nec mauris tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elit nisl, faucibus eu tempus vel, imperdiet at felis. Sed sed nibh et augue feugiat pharetra. Praesent ultrices nec tortor et gravida. Sed id rhoncus est. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur vitae luctus turpis. Maecenas diam ex, mattis vel dolor ut, fermentum consectetur ex. </p>
+                        <h5 class="mb-30">A good news after all</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elit nisl, faucibus eu tempus vel, imperdiet at felis. Sed sed nibh et augue feugiat pharetra. Praesent ultrices nec tortor et gravida. Sed id rhoncus est. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur vitae luctus turpis. Maecenas diam ex, mattis vel dolor ut, fermentum consectetur ex.</p>
+                    </div>
+                </div>
+
+                <!-- Sidebar Widget -->
+                <div class="col-12 col-sm-9 col-md-6 col-lg-4">
+                    <div class="sidebar-area">
+
+                        <!-- Add Widget -->
+                        <div class="single-widget-area add-widget mb-30">
+                            <a href="#">
+                                <img src="{{asset('landing/assets/img/ads-img/banner-daftar-manajemen.jpg')}}" alt="">
+                            </a>
+                        </div>
+
+                        <!-- Postingan Terbaru Widget -->
+                        <div class="single-widget-area news-widget mb-30">
+                            <h4>Postingan Terbaru</h4>
+
+                            <!-- Single News Area -->
+                            <div class="single-blog-post d-flex style-4 mb-30">
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail">
+                                    <a href="#"><img src="{{asset('landing/assets/img/bg-img/16.jpg')}}" alt=""></a>
+                                </div>
+
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <span class="post-date">June 20, 2018</span>
+                                    <a href="#" class="post-title">Nearly a quarter have no emergency savings</a>
+                                </div>
+                            </div>
+
+                            <!-- Single News Area -->
+                            <div class="single-blog-post d-flex style-4 mb-30">
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail">
+                                    <a href="#"><img src="{{asset('landing/assets/img/bg-img/17.jpg')}}" alt=""></a>
+                                </div>
+
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <span class="post-date">June 20, 2018</span>
+                                    <a href="#" class="post-title">Nearly a quarter have no emergency savings</a>
+                                </div>
+                            </div>
+
+                            <!-- Single News Area -->
+                            <div class="single-blog-post d-flex style-4 mb-30">
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail">
+                                    <a href="#"><img src="{{asset('landing/assets/img/bg-img/18.jpg')}}" alt=""></a>
+                                </div>
+
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <span class="post-date">June 20, 2018</span>
+                                    <a href="#" class="post-title">Top bitcoin exchange says over $30 million stolen</a>
+                                </div>
+                            </div>
+
+                            <!-- Single News Area -->
+                            <div class="single-blog-post d-flex style-4 mb-30">
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail">
+                                    <a href="#"><img src="{{asset('landing/assets/img/bg-img/19.jpg')}}" alt=""></a>
+                                </div>
+
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <span class="post-date">June 20, 2018</span>
+                                    <a href="#" class="post-title">Top bitcoin exchange says over $30 million stolen</a>
+                                </div>
+                            </div>
+
+                            <!-- Single News Area -->
+                            <div class="single-blog-post d-flex style-4 mb-30">
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail">
+                                    <a href="#"><img src="{{asset('landing/assets/img/bg-img/20.jpg')}}" alt=""></a>
+                                </div>
+
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <span class="post-date">June 20, 2018</span>
+                                    <a href="#" class="post-title">Dow falls 287 points as trade war fears escalate</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
 @endsection
