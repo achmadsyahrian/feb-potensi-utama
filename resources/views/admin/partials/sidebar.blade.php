@@ -6,7 +6,7 @@
         </button>
         <h1 class="navbar-brand">
             <a href=".">
-                <img src="{{ asset('landing/assets/img/logo-main.png') }}" alt="Potensi Utama" width="180"
+                <img src="{{ asset('landing/assets/img/logo-img/logo-main.png') }}" alt="Potensi Utama" width="180"
                     class="">
             </a>
         </h1>

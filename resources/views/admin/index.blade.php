@@ -41,8 +41,8 @@
                                 <div class="col-10">
                                     <h3 class="h1">Selamat Datang, {{ $currentUser->name }} 👋</h3>
                                     <div class="markdown text-muted">
-                                        Selamat datang di dashboard utama Universitas Potensi Utama. Di sini Anda dapat
-                                        mengakses semua fitur penting dan informasi terbaru mengenai kampus, dan
+                                        Selamat datang di dashboard utama {{env('APP_NAME')}}. Di sini Anda dapat
+                                        mengakses semua fitur penting dan informasi terbaru mengenai fakultas, dan
                                         lainnya. Untuk informasi lebih lanjut, kunjungi situs resmi kami !
                                     </div>
                                     <div class="mt-3">

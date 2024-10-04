@@ -40,7 +40,7 @@
                                         <li><a href="{{route('landing.academic.management')}}">Manajemen</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Berita & Informasi</a></li>
+                                <li><a href="{{route('landing.news.index')}}">Berita & Informasi</a></li>
                                 <li><a href="#">Administrasi</a></li>
                             </ul>
 

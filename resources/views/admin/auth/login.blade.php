@@ -13,8 +13,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Sign in with cover - Tabler - Premium and Open Source dashboard template with responsive and high quality UI.
-    </title>
+    <title>Login | {{env('APP_NAME')}}</title>
+    <link rel="shortcut icon" href="{{asset('landing/assets/img/logo-img/Logopotensiutama.png')}}" type="image/x-icon">
+    
     <!-- CSS files -->
     <link href="{{ asset('admin/dist/css/tabler.min.css?1684106062') }}" rel="stylesheet" />
     <link href="{{ asset('admin/dist/css/tabler-flags.min.css?1684106062') }}" rel="stylesheet" />
@@ -41,7 +42,7 @@
             <div class="container container-tight my-5 px-lg-5">
                 <div class="text-center mb-4">
                     <a href="." class="navbar-brand navbar-brand-autodark"><img
-                            src="{{ asset('landing/assets/img/logo-main.png') }}" height="70" alt=""></a>
+                            src="{{ asset('landing/assets/img/logo-img/Logopotensiutama.png') }}" height="70" alt=""></a>
                 </div>
                 <div class="">
                     <h2 class="h2 text-center mb-4">Masuk ke akun anda</h2>
@@ -115,7 +116,7 @@
         <div class="col-12 col-lg-6 col-xl-7 d-none d-lg-block">
             <!-- Photo -->
             <div class="position-relative bg-cover h-100 min-vh-100"
-                style="background-image: url('{{ asset('landing/assets/img/hero/gedung-upu.jpg') }}');">
+                style="background-image: url('{{ asset('landing/assets/img/building-img/gedung-upu.jpg') }}');">
                 <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-dark" style="opacity: 0.5;"></div>
             </div>
 

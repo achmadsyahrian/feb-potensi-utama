@@ -17,147 +17,259 @@
 @endif
 
 
-@section('app')
-    <main id="main">
-
-        <!-- ======= Breadcrumbs ======= -->
-        <div class="breadcrumbs d-flex align-items-center"
-            style="background-image: url({{ asset('landing/assets/img/breadcrumbs/gedung-upu.jpg') }});">
-            <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
-
-                <h2>{{$title}}</h2>
-                <ol>
-                    <li><a href="{{ route('landing.home') }}">Beranda</a></li>
-                    <li>{{$title}}</li>
-                </ol>
-
+@section('content')
+    <div class="catagory-featured-post bg-overlay clearfix" style="background-image: url({{asset('landing/assets/img/bg-img/23.jpg')}})">
+        <div class="container-fluid h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 col-lg-9">
+                    <!-- Post Content -->
+                    <div class="post-content">
+                        <p class="tag"><span>Berita & Informasi</span></p>
+                        <a href="#" class="post-title">{{env('APP_NAME')}}</a>
+                        <p>Selamat datang di halaman Berita dan Informasi {{env('APP_NAME')}} Universitas Potensi Utama. Di sini, Anda dapat menemukan berbagai update terkini, mulai dari kegiatan akademik, prestasi mahasiswa. Temukan informasi terbaru mengenai inovasi, kerjasama, dan program-program unggulan yang menjadi bagian dari komitmen kami untuk terus maju dalam dunia pendidikan.</p>
+                        {{-- <span class="post-date">June 20, 2018</span> --}}
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- End Breadcrumbs -->
+    </div>
 
-        <!-- ======= Berita Section ======= -->
-        <section id="news" class="news">
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-                <div class="row gy-4">
+    <section class="intro-news-area section-padding-100-0 mb-70">
+        <div class="container">
+            <div class="row justify-content-center">
+                <!-- Intro News Tabs Area -->
+                <div class="col-12 col-lg-8">
+                    <div class="intro-news-tab">
 
-                    <!-- Konten Utama -->
-                    <div class="col-xl-8 content" data-aos="fade-up" data-aos-delay="200">
-                        <div class="row gy-4 posts-list">
-                            @foreach ($data as $item)
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="post-item position-relative h-100">
-                                        <div class="post-img position-relative overflow-hidden">
-                                            @if ($item->thumbnail)
-                                                <img src="{{ asset($item->thumbnail) }}" class="img-fluid"
-                                                style="width: 415px; height:310px; object-fit:cover;"alt="">
-                                            @else
-                                                <img src="{{ asset('landing/assets/img/Logopotensiutama.png') }}" class="img-fluid"
-                                                style="width: 415px; height:310px; object-fit:cover;"alt="">
-                                            @endif
-                                            <span class="post-date">{{ $item->updated_at->format('F j') }}</span>
-                                        </div>
-                                        <div class="post-content d-flex flex-column">
-                                            <h3 class="post-title" title="{{ $item->title }}">
-                                                {{ \Illuminate\Support\Str::limit($item->title, 50, '...') }}</h3>
-                                            <div class="meta d-flex align-items-center">
-                                                <div class="d-flex align-items-center">
-                                                    <i class="bi bi-person"></i> <span
-                                                        class="ps-2">{{ $item->user->name }}</span>
-                                                </div>
-                                                <span class="px-3 text-black-50">/</span>
-                                                <div class="d-flex align-items-center">
-                                                    <i class="bi bi-folder2"></i> <span
-                                                        class="ps-2">{{ $item->category->name }}</span>
-                                                </div>
-                                            </div>
-
-                                            <x-filtered-content :content="$item->content" class="mt-4" />
-
-                                            <hr>
-                                            <a href="{{ route( $route . '.show', $item->slug) }}"
-                                                class="readmore stretched-link"><span>Baca Selengkapnya</span><i
-                                                    class="bi bi-arrow-right"></i></a>
-                                        </div>
-                                    </div>
+                        <!-- Intro News Filter -->
+                        <div class="intro-news-filter d-flex justify-content-between">
+                            <h6>Semua postingan</h6>
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <a class="nav-item nav-link active" id="nav1" data-toggle="tab" href="#nav-1" role="tab" aria-controls="nav-1" aria-selected="true">Berita</a>
+                                    <a class="nav-item nav-link" id="nav2" data-toggle="tab" href="#nav-2" role="tab" aria-controls="nav-2" aria-selected="false">Pengumuman</a>
+                                    <a class="nav-item nav-link" id="nav3" data-toggle="tab" href="#nav-3" role="tab" aria-controls="nav-3" aria-selected="false">Pengabdian Masyarakat</a>
                                 </div>
-                            @endforeach
+                            </nav>
                         </div>
-                    </div>
 
-                    <!-- Sidebar -->
-                    @if (!$data->isEmpty())
-                        <div class="col-xl-4" data-aos="fade-up" data-aos-delay="300">
-                            <div class="sidebar">
-
-                                <div class="sidebar-item search-form">
-                                    <h3 class="sidebar-title">Pencarian</h3>
-                                    <form action="{{ route($route . '.index') }}" method="GET" class="mt-3">
-                                        <input type="text" name="search" placeholder="Masukkan judul"
-                                            value="{{ request('search') }}">
-                                        <input type="hidden" name="category" value="{{ request('category') }}">
-                                        <input type="hidden" name="tag" value="{{ request('tag') }}">
-                                        <button type="submit"><i class="bi bi-search text-white"></i></button>
-                                    </form>
-                                </div>
-                                <div class="sidebar-item recent-posts">
-                                    <h3 class="sidebar-title">Recent Posts</h3>
-
-                                    <div class="mt-3">
-
-                                        @foreach ($dataRecent as $item)
-                                            <div class="post-item mt-3">
-                                                @if ($item->thumbnail)
-                                                    <img src="{{ asset($item->thumbnail) }}" alt=""
-                                                    style="width: 100px; height:60px; object-fit:cover;">
-                                                @else
-                                                    <img src="{{ asset('landing/assets/img/Logopotensiutama.png') }}" alt=""
-                                                        style="width: 100px; height:60px; object-fit:cover;">
-                                                @endif
-                                                <div>
-                                                    <h4><a
-                                                            href="{{ route($route . '.show', $item->slug) }}">{{ \Illuminate\Support\Str::limit($item->title, 40, '...') }}</a>
-                                                    </h4>
-                                                    <time datetime="{{ $item->updated_at->format('Y-m-d') }}">
-                                                        {{ $item->updated_at->format('M j, Y') }}
-                                                    </time>
-                                                </div>
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav1">
+                                <div class="row">
+                                    <!-- Single News Area -->
+                                    <div class="col-12">
+                                        <div class="single-blog-post style-2 mb-5">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="{{asset('landing/assets/img/bg-img/24.jpg')}}" alt=""></a>
                                             </div>
-                                        @endforeach
 
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Elon Musk: Tesla worker admitted to sabotage</a>
+                                                <a href="#" class="post-author mb-30">By Michael Smith</a>
+                                                <p>Nullam lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum. Etiam pretium turpis eget nibh laoreet iaculis. Proin ac urna at lectus volutpat lobortis. Vestibulum venenatis iaculis diam vitae lobortis. Donec tincidunt viverra elit, sed consectetur est pr etium ac. Mauris nec mauris tellus. </p>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                </div><!-- End sidebar recent posts-->
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post style-2 mb-5">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="{{asset('landing/assets/img/bg-img/14.jpg')}}" alt=""></a>
+                                            </div>
 
-                                <div class="sidebar-item tags">
-                                    <h3 class="sidebar-title">Tags</h3>
-                                    <ul class="mt-3">
-                                        @foreach ($tags as $tag)
-                                            <li>
-                                                <a
-                                                    href="{{ route($route . '.index', [
-                                                        'category' => request('category'),
-                                                        'tag' => $tag->slug,
-                                                        'search' => request('search'),
-                                                    ]) }}">
-                                                    {{ $tag->name }}
-                                                </a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Elon Musk: Tesla worker admitted to sabotage</a>
+                                                <a href="#" class="post-author">By Michael Smith</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post style-2 mb-5">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="{{asset('landing/assets/img/bg-img/15.jpg')}}" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Rachel Sm ith breaks down while discussing border crisis</a>
+                                                <a href="#" class="post-author">By Michael Smith</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post style-2 mb-5">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="{{asset('landing/assets/img/bg-img/4.jpg')}}" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Elon Musk: Tesla worker admitted to sabotage</a>
+                                                <a href="#" class="post-author">By Michael Smith</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post style-2 mb-5">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="{{asset('landing/assets/img/bg-img/5.jpg')}}" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Rachel Sm ith breaks down while discussing border crisis</a>
+                                                <a href="#" class="post-author">By Michael Smith</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    @else
-                        <p class="text-center">Belum ada pengumuman yg tersedia <i class="far fa-sad-tear"></i></p>
-                    @endif
+                        
+                        <!-- Pagination Bootstrap -->
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
 
+                        <!-- Custom CSS -->
+                        <style>
+                            .pagination .page-link {
+                                color: black; /* Warna default */
+                            }
+
+                            .pagination .page-link:hover {
+                                background-color: #439607; /* Hijau saat dihover */
+                                color: white; /* Teks berubah menjadi putih */
+                            }
+                        </style>
+
+                        
+                    </div>
                 </div>
-                @if (!$data->isEmpty())
-                    <x-landing-pagination :data="$data"></x-landing-pagination>
-                @endif
-            </div>
-        </section>
-        <!-- End Berita -->
 
-    </main>
+                <!-- Sidebar Widget -->
+                <div class="col-12 col-sm-9 col-md-6 col-lg-4">
+                    <div class="sidebar-area">
+
+                        <!-- Add Widget -->
+                        <div class="single-widget-area add-widget mb-30">
+                            <a href="#">
+                                <img src="{{asset('landing/assets/img/ads-img/banner-daftar-manajemen.jpg')}}" alt="">
+                            </a>
+                        </div>
+
+                        <!-- Latest News Widget -->
+                        <div class="single-widget-area news-widget mb-30">
+                            <h4>Postingan Terbaru</h4>
+
+                            <!-- Single News Area -->
+                            <div class="single-blog-post d-flex style-4 mb-30">
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail">
+                                    <a href="#"><img src="{{('landing/assets/img/bg-img/16.jpg')}}" alt=""></a>
+                                </div>
+
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <span class="post-date">June 20, 2018</span>
+                                    <a href="#" class="post-title">Nearly a quarter have no emergency savings</a>
+                                </div>
+                            </div>
+
+                            <!-- Single News Area -->
+                            <div class="single-blog-post d-flex style-4 mb-30">
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail">
+                                    <a href="#"><img src="{{('landing/assets/img/bg-img/17.jpg')}}" alt=""></a>
+                                </div>
+
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <span class="post-date">June 20, 2018</span>
+                                    <a href="#" class="post-title">Nearly a quarter have no emergency savings</a>
+                                </div>
+                            </div>
+
+                            <!-- Single News Area -->
+                            <div class="single-blog-post d-flex style-4 mb-30">
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail">
+                                    <a href="#"><img src="{{('landing/assets/img/bg-img/18.jpg')}}" alt=""></a>
+                                </div>
+
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <span class="post-date">June 20, 2018</span>
+                                    <a href="#" class="post-title">Top bitcoin exchange says over $30 million stolen</a>
+                                </div>
+                            </div>
+
+                            <!-- Single News Area -->
+                            <div class="single-blog-post d-flex style-4 mb-30">
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail">
+                                    <a href="#"><img src="{{('landing/assets/img/bg-img/19.jpg')}}" alt=""></a>
+                                </div>
+
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <span class="post-date">June 20, 2018</span>
+                                    <a href="#" class="post-title">Top bitcoin exchange says over $30 million stolen</a>
+                                </div>
+                            </div>
+
+                            <!-- Single News Area -->
+                            <div class="single-blog-post d-flex style-4 mb-30">
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail">
+                                    <a href="#"><img src="{{('landing/assets/img/bg-img/20.jpg')}}" alt=""></a>
+                                </div>
+
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <span class="post-date">June 20, 2018</span>
+                                    <a href="#" class="post-title">Dow falls 287 points as trade war fears escalate</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
 @endsection

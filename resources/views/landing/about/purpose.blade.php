@@ -17,7 +17,7 @@
                     <!-- Post Content -->
                     <div class="post-content">
                         <p class="tag"><span>Visi Misi</span></p>
-                        <p class="post-title">Universitas Potensi Utama</p>
+                        <p class="post-title">{{env('APP_NAME')}}</p>
                         {{-- <div class="d-flex align-items-center">
                             <span class="post-date mr-30">June 20, 2018</span>
                             <span class="post-date">By Michael Smith</span>
