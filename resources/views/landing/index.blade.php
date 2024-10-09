@@ -1,5 +1,5 @@
 @extends('landing.layouts.app')
-@section('title', 'Beranda - Fakultas Ekonomi & Bisnis | Universitas Potensi Utama')
+@section('title', 'Beranda - '. env('APP_NAME') .' | Universitas Potensi Utama')
 @section('content')
 
     @include('landing.partials.breaking-news')

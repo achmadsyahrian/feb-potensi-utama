@@ -10,33 +10,28 @@ use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request, $categorySlug = null, $tagSlug = null)
     {
         $title = "Berita";
-        $route = "landing.news";
-        
-        // Ambil nilai dari query string
-        $search = $request->input('search');
-        $category = $request->input('category');
-        $tag = $request->input('tag');
+        $search = $request->input('s');
 
         // Query untuk mengambil data berdasarkan kategori, tag, dan pencarian judul
         $query = Post::with('user', 'category', 'tags')
             ->where('type', 'news')
             ->where('is_published', 1)
             ->orderBy('created_at', 'desc');
-
-        // Tambahkan filter kategori terlebih dahulu
-        if ($category) {
-            $query->whereHas('category', function ($q) use ($category) {
-                $q->where('slug', $category);
+            
+        // Tambahkan filter kategori jika ada
+        if ($categorySlug) {
+            $query->whereHas('category', function ($q) use ($categorySlug) {
+                $q->where('slug', $categorySlug);
             });
         }
 
-        // Kemudian tambahkan filter tag
-        if ($tag) {
-            $query->whereHas('tags', function ($q) use ($tag) {
-                $q->where('slug', $tag);
+        // Tambahkan filter tag jika ada
+        if ($tagSlug) {
+            $query->whereHas('tags', function ($q) use ($tagSlug) {
+                $q->where('slug', $tagSlug);
             });
         }
 
@@ -48,9 +43,7 @@ class NewsController extends Controller
         // Ambil data dengan paginasi
         $data = $query->paginate(9);
         $data->appends([
-            'search' => $search,
-            'category' => $category,
-            'tag' => $tag,
+            's' => $search,
         ]);
 
         // Ambil data terbaru
@@ -61,12 +54,44 @@ class NewsController extends Controller
             ->take(5)
             ->get();
 
-        // Ambil semua tags
-        $tags = Tag::all();
-        $categories = Category::all();
+        // Ambil semua tags dan kategori
+        $tags = Tag::withCount('posts')->orderBy('name')->get();
+        $categories = Category::withCount('posts')->orderBy('name')->get();
 
-        return view('landing.posts.index', compact('data', 'dataRecent', 'tags', 'title', 'route', 'categories'));
+        // Hitung total data dengan filter kategori dan tag jika ada
+        $totalDataQuery = Post::where('type', 'news')->where('is_published', 1);
+
+        // Filter kategori
+        if ($categorySlug) {
+            $totalDataQuery->whereHas('category', function ($q) use ($categorySlug) {
+                $q->where('slug', $categorySlug);
+            });
+        }
+
+        // Filter tag
+        if ($tagSlug) {
+            $totalDataQuery->whereHas('tags', function ($q) use ($tagSlug) {
+                $q->where('slug', $tagSlug);
+            });
+        }
+
+        $totalData = $totalDataQuery->count();
+
+        return view('landing.posts.news.index', compact('data', 'dataRecent', 'tags', 'title', 'categories', 'totalData', 'tagSlug', 'categorySlug'));
     }
+
+    public function byCategory(Request $request, $categorySlug)
+    {
+        // Panggil index dengan categorySlug
+        return $this->index($request, $categorySlug);
+    }
+
+    public function byTag(Request $request, $tagSlug)
+    {
+        // Panggil index dengan tagSlug
+        return $this->index($request, null, $tagSlug);
+    }
+
 
     public function show($slug) {
         $title = "Berita";
@@ -83,6 +108,6 @@ class NewsController extends Controller
                         
         $tags = Tag::all();
 
-        return view('landing.posts.detail', compact('post', 'dataRecent', 'tags', 'title', 'route'));
+        return view('landing.posts.news.detail', compact('post', 'dataRecent', 'tags', 'title', 'route'));
     }
 }
