@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta name="description" content="@yield('meta_description', 'Selamat datang di situs online Fakultas Ekonomi & Bisnis Universitas Potensi Utama')">
+    <meta name="description" content="@yield('meta_description', 'Selamat datang di situs online ' . env('APP_NAME') . ' Universitas Potensi Utama')">
     <meta name="keywords" content="@yield('meta_keywords', 'universitas potensi utama, potensiutama, potensi utama, kampus, pendidikan, upu medan')">
     <link rel="canonical" href="@yield('canonical', 'https://feb.potensi-utama.ac.id/')">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>@yield('title', 'Fakultas Ekonomi & Bisnis | Universitas Potensi Utama')</title>
+    <title>@yield('title', env('APP_NAME') .' | Universitas Potensi Utama')</title>
 
     <link rel="icon" href="{{asset('landing/assets/img/logo-img/Logopotensiutama.png')}}">
 

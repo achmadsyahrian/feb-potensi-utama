@@ -112,7 +112,7 @@
                                             <div class="col-12 col-sm-6">
                                                 <div class="single-blog-post style-2 mb-5">
                                                     <!-- Blog Thumbnail -->
-                                                    <div class="blog-thumbnail">
+                                                    <div class="blog-thumbnail position-relative">
                                                         <a href="#">
                                                             @if ($post->thumbnail)
                                                                 <img src="{{ asset($post->thumbnail) }}"
@@ -122,6 +122,7 @@
                                                                 <img src="{{ asset('landing/assets/img/logo-img/Logopotensiutama.png') }}" style="height:240px; object-fit:cover;" alt="">
                                                             @endif
                                                         </a>
+                                                        <span class="category-label">{{ $post->category->name }}</span>
                                                     </div>
 
                                                     <!-- Blog Content -->

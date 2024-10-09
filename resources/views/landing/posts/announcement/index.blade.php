@@ -28,20 +28,20 @@
         <div class="container">
             <div class="row justify-content-center">
                 <!-- Intro News Tabs Area -->
-                <div class="col-12 col-md-7 col-lg-8">
+                <div class="col-12 col-lg-8">
                     <div class="intro-news-tab">
 
                         <!-- Intro News Filter -->
                         <div class="intro-news-filter d-flex justify-content-between">
                             <div class="d-flex align-items-center">
-                                <a class="text-warning ml-2" href="{{ route('landing.news.index') }}" title="Bersihkan Pencarian">
+                                <a class="text-warning ml-2" href="{{ route('landing.announcement.index') }}" title="Bersihkan Pencarian">
                                     <i class="fas fa-redo"></i>
                                 </a>
                                 
                                 <h6 class="mb-0">
-                                    @if(request()->routeIs('landing.news.category'))
+                                    @if(request()->routeIs('landing.announcement.category'))
                                         By Category : {{ $categorySlug }} 
-                                    @elseif(request()->routeIs('landing.news.tag'))
+                                    @elseif(request()->routeIs('landing.announcement.tag'))
                                         By Tag : {{ $tagSlug }}
                                     @elseif(request('s'))
                                         Cari : {{ request('s')}}
@@ -59,60 +59,62 @@
 
                         <div class="tab-content" id="nav-tabContent">                            
                             <div class="tab-pane fade show active" id="berita" role="tabpanel" aria-labelledby="nav3">
-                                @foreach($data as $index => $post)
-                                    @if($index < 1)
-                                        <div class="col-12">
-                                            <div class="single-blog-post style-2 mb-5">
-                                                <!-- Blog Thumbnail -->
-                                                <div class="blog-thumbnail position-relative">
-                                                    <a href="#">
-                                                        @if ($post->thumbnail)
-                                                            <img src="{{ asset($post->thumbnail) }}"
-                                                                    style="height:400px; object-fit:cover;" class="img-fluid" alt="">
-                                                        @else
-                                                            <img src="{{ asset('landing/assets/img/logo-img/Logopotensiutama.png') }}"
-                                                                    style="height:400px; object-fit:cover;" alt="">
-                                                        @endif
-                                                    </a>
-                                                    <!-- Kategori -->
-                                                    <span class="category-label">{{ $post->category->name }}</span>
+                                <div class="row">
+                                    @foreach($data as $index => $post)
+                                        @if($index < 1)
+                                            <div class="col-12">
+                                                <div class="single-blog-post style-2 mb-5">
+                                                    <!-- Blog Thumbnail -->
+                                                    <div class="blog-thumbnail position-relative">
+                                                        <a href="#">
+                                                            @if ($post->thumbnail)
+                                                                <img src="{{ asset($post->thumbnail) }}"
+                                                                     style="height:400px; object-fit:cover;" class="img-fluid" alt="">
+                                                            @else
+                                                                <img src="{{ asset('landing/assets/img/logo-img/Logopotensiutama.png') }}"
+                                                                     style="height:400px; object-fit:cover;" alt="">
+                                                            @endif
+                                                        </a>
+                                                        <!-- Kategori -->
+                                                        <span class="category-label">{{ $post->category->name }}</span>
+                                                    </div>
+                                                
+                                                    <!-- Blog Content -->
+                                                    <div class="blog-content">
+                                                        <span class="post-date">{{ $post->created_at->format('M j, Y') }}</span>
+                                                        <a href="#" class="post-title" title="{{ $post->title }}">{{ \Illuminate\Support\Str::limit($post->title, 50, '...') }}</a>
+                                                        <a href="#" class="post-author ">By {{ $post->user->name }}</a>
+                                                        <x-filtered-content :content="$post->content" class="mt-4" />
+                                                    </div>
                                                 </div>
-                                            
-                                                <!-- Blog Content -->
-                                                <div class="blog-content">
-                                                    <span class="post-date">{{ $post->created_at->format('M j, Y') }}</span>
-                                                    <a href="#" class="post-title" title="{{ $post->title }}">{{ \Illuminate\Support\Str::limit($post->title, 50, '...') }}</a>
-                                                    <a href="#" class="post-author ">By {{ $post->user->name }}</a>
-                                                    <x-filtered-content :content="$post->content" class="mt-4" />
+                                            </div>
+                                        @else
+                                            <div class="col-12 col-sm-6">
+                                                <div class="single-blog-post style-2 mb-5">
+                                                    <!-- Blog Thumbnail -->
+                                                    <div class="blog-thumbnail position-relative">
+                                                        <a href="#">
+                                                            @if ($post->thumbnail)
+                                                                <img src="{{ asset($post->thumbnail) }}"
+                                                                style="height:250px;; object-fit:cover;" class="img-fluid"
+                                                                alt="">
+                                                            @else
+                                                                <img src="{{ asset('landing/assets/img/logo-img/Logopotensiutama.png') }}" style="height:250px; object-fit:cover;" alt="">
+                                                            @endif
+                                                        </a>
+                                                        <span class="category-label">{{ $post->category->name }}</span>
+                                                    </div>
+    
+                                                    <!-- Blog Content -->
+                                                    <div class="blog-content">
+                                                        <span class="post-date">{{ $post->created_at->format('M j, Y') }}</span>
+                                                        <a href="#" class="post-title" title="{{$post->title}}">{{ \Illuminate\Support\Str::limit($post->title, 50, '...') }}</a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    @else
-                                        <div class="single-blog-post d-flex flex-wrap style-5 mb-30">
-                                            <!-- Blog Thumbnail -->
-                                            <div class="blog-thumbnail position-relative">
-                                                <a href="#">
-                                                    @if ($post->thumbnail)
-                                                        <img src="{{ asset($post->thumbnail) }}"
-                                                        style="width:600px; height:250px; object-fit:cover;" class="img-fluid"
-                                                        alt="">
-                                                    @else
-                                                        <img src="{{ asset('landing/assets/img/logo-img/Logopotensiutama.png') }}" style="width:600px; height:250px; object-fit:cover;" alt="">
-                                                    @endif
-                                                </a>
-                                                <span class="category-label">{{ $post->category->name }}</span>
-                                            </div>
-
-                                            <!-- Blog Content -->
-                                            <div class="blog-content">
-                                                <span class="post-date">{{ $post->created_at->format('M j, Y') }}</span>
-                                                <a href="#" class="post-title" title="{{$post->title}}">{{ \Illuminate\Support\Str::limit($post->title, 50, '...') }}</a>
-                                                <a href="#" class="post-author mb-0">By {{$post->user->name}}</a>
-                                                <x-filtered-content :content="$post->content" class="mt-4" size='200'/>
-                                            </div>
-                                        </div>
-                                    @endif
-                                @endforeach
+                                        @endif
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
                         
@@ -126,7 +128,7 @@
                 </div>
 
                 <!-- Sidebar Widget -->
-                <div class="col-12 col-md-5 col-lg-4">
+                <div class="col-12 col-sm-9 col-md-6 col-lg-4">
                     <div class="sidebar-area">
 
                         {{-- Search --}}
@@ -177,7 +179,7 @@
                             <h4 class="mb-3">Category</h4>
                             <div class="category-list">
                                 @foreach ($categories as $item)
-                                    <a href="{{ route('landing.news.category', $item->slug) }}" class="category-item d-inline-block mb-2 px-3 py-2 text-decoration-none">
+                                    <a href="{{ route('landing.announcement.category', $item->slug) }}" class="category-item d-inline-block mb-2 px-3 py-2 text-decoration-none">
                                         {{ $item->name }}
                                     </a>
                                 @endforeach
@@ -190,7 +192,7 @@
                             <h4 class="mb-3">Tag</h4>
                             <div class="category-list">
                                 @foreach ($tags as $item)
-                                    <a href="{{ url('/berita/tag', $item->slug) }}" class="category-item d-inline-block mb-2 px-3 py-2">
+                                    <a href="{{ route('landing.announcement.tag', $item->slug) }}" class="category-item d-inline-block mb-2 px-3 py-2">
                                         {{ $item->name }}
                                     </a>
                                 @endforeach

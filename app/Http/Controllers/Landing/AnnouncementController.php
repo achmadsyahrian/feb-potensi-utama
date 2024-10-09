@@ -10,33 +10,28 @@ use Illuminate\Http\Request;
 
 class AnnouncementController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request, $categorySlug = null, $tagSlug = null)
     {
         $title = "Pengumuman";
-        $route = "landing.announcement";
-        
-        // Ambil nilai dari query string
-        $search = $request->input('search');
-        $category = $request->input('category');
-        $tag = $request->input('tag');
+        $search = $request->input('s');
 
         // Query untuk mengambil data berdasarkan kategori, tag, dan pencarian judul
         $query = Post::with('user', 'category', 'tags')
             ->where('type', 'announcement')
             ->where('is_published', 1)
             ->orderBy('created_at', 'desc');
-
-        // Tambahkan filter kategori terlebih dahulu
-        if ($category) {
-            $query->whereHas('category', function ($q) use ($category) {
-                $q->where('slug', $category);
+            
+        // Tambahkan filter kategori jika ada
+        if ($categorySlug) {
+            $query->whereHas('category', function ($q) use ($categorySlug) {
+                $q->where('slug', $categorySlug);
             });
         }
 
-        // Kemudian tambahkan filter tag
-        if ($tag) {
-            $query->whereHas('tags', function ($q) use ($tag) {
-                $q->where('slug', $tag);
+        // Tambahkan filter tag jika ada
+        if ($tagSlug) {
+            $query->whereHas('tags', function ($q) use ($tagSlug) {
+                $q->where('slug', $tagSlug);
             });
         }
 
@@ -46,33 +41,64 @@ class AnnouncementController extends Controller
         }
 
         // Ambil data dengan paginasi
-        $data = $query->paginate(8);
+        $data = $query->paginate(9);
         $data->appends([
-            'search' => $search,
-            'category' => $category,
-            'tag' => $tag,
+            's' => $search,
         ]);
 
         // Ambil data terbaru
         $dataRecent = Post::with('user', 'category')
             ->where('type', 'announcement')
             ->where('is_published', 1)
-            ->orderBy('updated_at', 'desc')
+            ->orderBy('created_at', 'desc')
             ->take(5)
             ->get();
 
-        // Ambil semua tags
-        $tags = Tag::all();
+        // Ambil semua tags dan kategori
+        $tags = Tag::withCount('posts')->orderBy('name')->get();
+        $categories = Category::withCount('posts')->orderBy('name')->get();
 
-        return view('landing.posts.index', compact('data', 'dataRecent', 'tags', 'title', 'route'));
+        // Hitung total data dengan filter kategori dan tag jika ada
+        $totalDataQuery = Post::where('type', 'announcement')->where('is_published', 1);
+
+        // Filter kategori
+        if ($categorySlug) {
+            $totalDataQuery->whereHas('category', function ($q) use ($categorySlug) {
+                $q->where('slug', $categorySlug);
+            });
+        }
+
+        // Filter tag
+        if ($tagSlug) {
+            $totalDataQuery->whereHas('tags', function ($q) use ($tagSlug) {
+                $q->where('slug', $tagSlug);
+            });
+        }
+
+        $totalData = $totalDataQuery->count();
+
+        return view('landing.posts.announcement.index', compact('data', 'dataRecent', 'tags', 'title', 'categories', 'totalData', 'tagSlug', 'categorySlug'));
+    }
+
+    public function byCategory(Request $request, $categorySlug)
+    {
+        // Panggil index dengan categorySlug
+        return $this->index($request, $categorySlug);
+    }
+
+    public function byTag(Request $request, $tagSlug)
+    {
+        // Panggil index dengan tagSlug
+        return $this->index($request, null, $tagSlug);
     }
 
 
     public function show($slug) {
         $title = "Pengumuman";
-        $route = "landing.announcement";
+        $route = "landing.news";
 
-        $post = Post::with('category', 'user')->where('slug', $slug)->firstOrFail();
+        $post = Post::with('category', 'user', 'files')->where('slug', $slug)->firstOrFail();
+
         $dataRecent = Post::with('user', 'category')
                         ->where('type', 'announcement')
                         ->where('is_published', 1)
@@ -82,7 +108,7 @@ class AnnouncementController extends Controller
                         
         $tags = Tag::all();
 
-        return view('landing.posts.detail', compact('post', 'dataRecent', 'tags', 'title', 'route'));
+        return view('landing.posts.announcement.detail', compact('post', 'dataRecent', 'tags', 'title', 'route'));
     }
 
 }

@@ -43,7 +43,7 @@
                                 <li><a href="#">Informasi</a>
                                     <ul class="dropdown">
                                         <li><a href="{{route('landing.news.index')}}">Berita</a></li>
-                                        <li><a href="{{route('landing.academic.banking')}}">Pengumuman</a></li>
+                                        <li><a href="{{route('landing.announcement.index')}}">Pengumuman</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#">Administrasi</a></li>
