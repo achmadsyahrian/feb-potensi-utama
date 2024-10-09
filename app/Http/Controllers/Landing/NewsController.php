@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Landing;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
@@ -45,7 +46,7 @@ class NewsController extends Controller
         }
 
         // Ambil data dengan paginasi
-        $data = $query->paginate(8);
+        $data = $query->paginate(9);
         $data->appends([
             'search' => $search,
             'category' => $category,
@@ -56,14 +57,15 @@ class NewsController extends Controller
         $dataRecent = Post::with('user', 'category')
             ->where('type', 'news')
             ->where('is_published', 1)
-            ->orderBy('updated_at', 'desc')
+            ->orderBy('created_at', 'desc')
             ->take(5)
             ->get();
 
         // Ambil semua tags
         $tags = Tag::all();
+        $categories = Category::all();
 
-        return view('landing.posts.index', compact('data', 'dataRecent', 'tags', 'title', 'route'));
+        return view('landing.posts.index', compact('data', 'dataRecent', 'tags', 'title', 'route', 'categories'));
     }
 
     public function show($slug) {

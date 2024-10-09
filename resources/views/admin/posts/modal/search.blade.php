@@ -9,9 +9,9 @@
                     <option value="news" {{ request('search_type') == 'news' ? 'selected' : '' }}>Berita</option>
                     <option value="announcement" {{ request('search_type') == 'announcement' ? 'selected' : '' }}>
                         Pengumuman</option>
-                    <option value="community_service"
+                    {{-- <option value="community_service"
                         {{ request('search_type') == 'community_service' ? 'selected' : '' }}>Pengabdian Masyarakat
-                    </option>
+                    </option> --}}
                 </select>
             </div>
         </div>

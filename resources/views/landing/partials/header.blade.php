@@ -28,8 +28,8 @@
                                 <li><a href="{{route('landing.home')}}">Beranda</a></li>
                                 <li><a href="#">Tentang Fakultas</a>
                                     <ul class="dropdown">
-                                        {{-- <li><a href="catagory.html">Sejarah</a></li> --}}
                                         <li><a href="{{route('landing.purpose')}}">Visi Misi</a></li>
+                                        <li><a href="#">Penelitian</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#">Program Studi</a>
@@ -40,7 +40,12 @@
                                         <li><a href="{{route('landing.academic.management')}}">Manajemen</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{{route('landing.news.index')}}">Berita & Informasi</a></li>
+                                <li><a href="#">Informasi</a>
+                                    <ul class="dropdown">
+                                        <li><a href="{{route('landing.news.index')}}">Berita</a></li>
+                                        <li><a href="{{route('landing.academic.banking')}}">Pengumuman</a></li>
+                                    </ul>
+                                </li>
                                 <li><a href="#">Administrasi</a></li>
                             </ul>
 

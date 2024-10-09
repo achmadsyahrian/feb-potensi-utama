@@ -635,56 +635,8 @@
                         </div>
                     </div>
 
-                    <div class="post-details-content mb-100">
-                        <h1 class="mb-30">Berita</h1>
-                        <div class="row">
-                           <div class="col-12 col-sm-6 col-lg-4">
-                              <div class="single-blog-post style-2 mb-5">
-                                  <!-- Blog Thumbnail -->
-                                  <div class="blog-thumbnail">
-                                      <a href="#"><img src="{{asset("landing/assets/img/bg-img/4.jpg")}}" alt=""></a>
-                                  </div>
-          
-                                  <!-- Blog Content -->
-                                  <div class="blog-content">
-                                      <span class="post-date">June 20, 2018</span>
-                                      <a href="#" class="post-title">Elon Musk: Tesla worker admitted to sabotage</a>
-                                      <a href="#" class="post-author">By Michael Smith</a>
-                                  </div>
-                              </div>
-                           </div>
-                           <div class="col-12 col-sm-6 col-lg-4">
-                              <div class="single-blog-post style-2 mb-5">
-                                  <!-- Blog Thumbnail -->
-                                  <div class="blog-thumbnail">
-                                      <a href="#"><img src="{{asset("landing/assets/img/bg-img/4.jpg")}}" alt=""></a>
-                                  </div>
-          
-                                  <!-- Blog Content -->
-                                  <div class="blog-content">
-                                      <span class="post-date">June 20, 2018</span>
-                                      <a href="#" class="post-title">Elon Musk: Tesla worker admitted to sabotage</a>
-                                      <a href="#" class="post-author">By Michael Smith</a>
-                                  </div>
-                              </div>
-                           </div>
-                           <div class="col-12 col-sm-6 col-lg-4">
-                              <div class="single-blog-post style-2 mb-5">
-                                  <!-- Blog Thumbnail -->
-                                  <div class="blog-thumbnail">
-                                      <a href="#"><img src="{{asset("landing/assets/img/bg-img/4.jpg")}}" alt=""></a>
-                                  </div>
-          
-                                  <!-- Blog Content -->
-                                  <div class="blog-content">
-                                      <span class="post-date">June 20, 2018</span>
-                                      <a href="#" class="post-title">Elon Musk: Tesla worker admitted to sabotage</a>
-                                      <a href="#" class="post-author">By Michael Smith</a>
-                                  </div>
-                              </div>
-                           </div>
-                        </div>
-                    </div>
+                    {{-- Berita Prodi --}}
+                    <x-academic-news :latestPosts="$latestPosts"></x-academic-news>
                 </div>
             </div>
         </div>

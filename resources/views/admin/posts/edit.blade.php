@@ -61,7 +61,7 @@
                                     <option disabled>Pilih Type</option>
                                     <option value="news" {{ old('type', $post->type) === 'news' ? 'selected' : '' }}>Berita</option>
                                     <option value="announcement" {{ old('type', $post->type) === 'announcement' ? 'selected' : '' }}>Pengumuman</option>
-                                    <option value="community_service" {{ old('type', $post->type) === 'community_service' ? 'selected' : '' }}>Pengabdian Masyarakat</option>
+                                    {{-- <option value="community_service" {{ old('type', $post->type) === 'community_service' ? 'selected' : '' }}>Pengabdian Masyarakat</option> --}}
                                 </select>                                
                                 @error('type')
                                     <p class="text-danger text-sm">{{ $message }}</p>

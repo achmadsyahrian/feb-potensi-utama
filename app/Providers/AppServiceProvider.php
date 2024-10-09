@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Post;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +21,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Berikan data 'latestAnnouncement' ke semua views
+        View::composer('*', function ($view) {
+            $latestAnnouncement = Post::where('type', 'announcement')
+                ->where('is_published', 1)
+                ->orderBy('created_at', 'desc')
+                ->take(3)
+                ->get();
+
+            $view->with('latestAnnouncement', $latestAnnouncement);
+        });
     }
 }

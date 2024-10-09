@@ -1,3 +1,4 @@
+@if($latestAnnouncement->isNotEmpty())
 <section class="breaking-news-area">
    <div class="container-fluid">
        <div class="row">
@@ -9,9 +10,9 @@
                    </div>
                    <div id="breakingNewsTicker" class="ticker">
                       <ul>
-                         <li><a href="#">Pendaftaran Mahasiswa Baru masih dibuka hingga akhir bulan ini.</a></li>
-                         <li><a href="#">Seminar Nasional tentang Teknologi Informasi akan dilaksanakan minggu depan.</a></li>
-                         <li><a href="#">Pengumuman: Pembayaran SPP semester genap telah dibuka.</a></li>
+                        @foreach($latestAnnouncement as $announcement)
+                            <li><a href="#">{{ $announcement->title }}</a></li>
+                        @endforeach
                       </ul>
                    </div>
                </div>
@@ -19,3 +20,4 @@
        </div>
    </div>
 </section>
+@endif

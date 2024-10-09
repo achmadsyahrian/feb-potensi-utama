@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\Landing\AcademicController;
 use App\Http\Controllers\Landing\AnnouncementController;
 use App\Http\Controllers\Landing\CommunityController;
 use App\Http\Controllers\Landing\HomeController;
 use App\Http\Controllers\Landing\NewsController;
+use App\Models\Post;
 use App\Models\Research;
 use Illuminate\Support\Facades\Route;
 
@@ -24,17 +26,24 @@ Route::group(['namespace' => 'Landing', 'as' => 'landing.'], function() {
         // Route::view('/sejarah', 'landing.about.history')->name('history');
 
         // Visi Misi
-        Route::view('/visi-misi', 'landing.about.purpose')->name('purpose');
+        Route::get('/visi-misi', function() {
+            $latestPosts = Post::where('type', 'news')
+                ->orderBy('created_at', 'desc')
+                ->take(4)
+                ->get();
+
+            return view('landing.about.purpose', compact('latestPosts'));
+        })->name('purpose');
 
         // Program Studi
             // Ekonomi Syariah
-            Route::view('/program-studi/ekonomi-syariah', 'landing.academic.economy')->name('academic.economy');
+            Route::get('/program-studi/ekonomi-syariah', [AcademicController::class, 'economy'])->name('academic.economy');
             // Perbankan Syariah
-            Route::view('/program-studi/perbankan-syariah', 'landing.academic.banking')->name('academic.banking');
+            Route::get('/program-studi/perbankan-syariah', [AcademicController::class, 'banking'])->name('academic.banking');
             // Akuntansi
-            Route::view('/program-studi/akuntansi', 'landing.academic.accounting')->name('academic.accounting');
+            Route::get('/program-studi/akuntansi', [AcademicController::class, 'accounting'])->name('academic.accounting');
             // Manajemen
-            Route::view('/program-studi/manajemen', 'landing.academic.management')->name('academic.management');
+            Route::get('/program-studi/manajemen', [AcademicController::class, 'management'])->name('academic.management');
 
         // Akreditasi
         // Route::view('/akreditasi', 'landing.about.accreditation')->name('accreditation');
@@ -45,7 +54,7 @@ Route::group(['namespace' => 'Landing', 'as' => 'landing.'], function() {
     // Informasi
         // Berita
         Route::get('/berita', [NewsController::class, 'index'])->name('news.index');
-        Route::view('/berita/detail', 'landing.posts.detail')->name('academic.management');
+        Route::view('/berita/detail', 'landing.posts.detail');
         
         Route::get('/berita/{slug}', [NewsController::class, 'show'])->name('news.show');
 

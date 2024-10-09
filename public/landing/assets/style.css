@@ -1527,4 +1527,42 @@ img {
 
 /* ====== The End ====== */
 
+
+/* My Css */
+/* Pagination */
+.pagination .page-link {
+  color: black; /* Warna default */
+}
+
+.status-color {
+  background-color: #439607;
+  color: white;
+}
+
+.pagination .page-link:hover {
+  background-color: #439607; /* Hijau saat dihover */
+  color: white; /* Teks berubah menjadi putih */
+}
+
+/* Category List */
+.category-item {
+  border: 1px solid #ddd; /* Border ringan */
+  background-color: transparent; /* Background transparan */
+  color: #333; /* Warna teks */
+  text-decoration: none; /* Hapus underline pada link */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Animasi transisi */
+}
+
+.category-item:hover {
+  background-color: #439607; /* Warna background saat hover */
+  color: white; /* Warna teks saat hover */
+}
+
+.category-list {
+  display: flex;
+  flex-wrap: wrap; /* Membungkus item jika lebih dari satu baris */
+  gap: 10px; /* Jarak antar kategori */
+}
+
+
 /*# sourceMappingURL=style.css.map */

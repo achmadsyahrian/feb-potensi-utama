@@ -56,7 +56,7 @@
                                     <option selected disabled>Pilih Type</option>
                                     <option value="news">Berita</option>
                                     <option value="announcement">Pengumuman</option>
-                                    <option value="community_service">Pengabdian Masyarakat</option>
+                                    {{-- <option value="community_service">Pengabdian Masyarakat</option> --}}
                                 </select>
                                 @error('type')
                                     <p class="text-danger text-sm">{{ $message }}</p>

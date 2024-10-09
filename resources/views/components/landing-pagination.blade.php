@@ -1,53 +1,74 @@
-<div class="news-pagination">
-    <ul class="justify-content-center">
-        {{-- Previous Page Link --}}
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        <!-- Previous Page Link -->
         @if ($data->onFirstPage())
-            <li class="disabled"><a><span>&laquo; </span></a></li>
+            <li class="page-item disabled">
+                <a>
+                    <span class="page-link">&laquo;</span>
+                </a>
+            </li>
         @else
-            <li><a href="{{ $data->previousPageUrl() }}" rel="prev">&laquo; </a></li>
+            <li class="page-item">
+                <a class="page-link" href="{{ $data->previousPageUrl() }}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
         @endif
 
-        {{-- Page Number Links --}}
+        <!-- Page Number Links -->
         @php
             $currentPage = $data->currentPage();
-            $totalPages = $data->lastPage();
-            $showRange = 1; // Jumlah halaman yang ditampilkan di sebelah kiri dan kanan halaman saat ini
+            $lastPage = $data->lastPage();
+            $start = max(1, $currentPage - 1);
+            $end = min($lastPage, $currentPage + 1);
         @endphp
 
-        {{-- Display the first page --}}
-        @if ($currentPage > 1 + $showRange)
-            <li><a href="{{ $data->url(1) }}">1</a></li>
-            @if ($currentPage > 2 + $showRange)
-                <li class="disabled"><span>&hellip;</span></li>
+        <!-- First Page -->
+        @if ($start > 1)
+            <li class="page-item">
+                <a class="page-link" href="{{ $data->url(1) }}">1</a>
+            </li>
+            @if ($start > 2)
+                <li class="page-item disabled">
+                    <a>
+                        <span class="page-link">...</span>
+                    </a>
+                </li>
             @endif
         @endif
 
-        {{-- Display previous pages --}}
-        @for ($i = max($currentPage - $showRange, 1); $i < $currentPage; $i++)
-            <li><a href="{{ $data->url($i) }}">{{ $i }}</a></li>
+        <!-- Page Range -->
+        @for ($page = $start; $page <= $end; $page++)
+            <li class="page-item">
+                <a class="page-link {{ $currentPage == $page ? 'status-color text-white' : '' }}" href="{{ $data->url($page) }}">{{ $page }}</a>
+            </li>
         @endfor
 
-        {{-- Display the current page --}}
-        <li class="active"><a href="{{ $data->url($currentPage) }}">{{ $currentPage }}</a></li>
-
-        {{-- Display next pages --}}
-        @for ($i = $currentPage + 1; $i <= min($currentPage + $showRange, $totalPages); $i++)
-            <li><a href="{{ $data->url($i) }}">{{ $i }}</a></li>
-        @endfor
-
-        {{-- Display the last page --}}
-        @if ($currentPage < $totalPages - $showRange)
-            @if ($currentPage < $totalPages - 1 - $showRange)
-                <li class="disabled"><span>&hellip;</span></li>
+        <!-- Last Page -->
+        @if ($end < $lastPage)
+            @if ($end < $lastPage - 1)
+                <li class="page-item disabled">
+                    <a>
+                        <span class="page-link">...</span>
+                    </a>
+                </li>
             @endif
-            <li><a href="{{ $data->url($totalPages) }}">{{ $totalPages }}</a></li>
+            <li class="page-item">
+                <a class="page-link" href="{{ $data->url($lastPage) }}">{{ $lastPage }}</a>
+            </li>
         @endif
 
-        {{-- Next Page Link --}}
+        <!-- Next Page Link -->
         @if ($data->hasMorePages())
-            <li><a href="{{ $data->nextPageUrl() }}" rel="next"> &raquo;</a></li>
+            <li class="page-item">
+                <a class="page-link" href="{{ $data->nextPageUrl() }}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
         @else
-            <li class="disabled"><a><span> &raquo;</span></a></li>
+            <li class="page-item disabled">
+                <span class="page-link">&raquo;</span>
+            </li>
         @endif
     </ul>
-</div>
+</nav>

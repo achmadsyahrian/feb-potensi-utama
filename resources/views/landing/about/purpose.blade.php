@@ -71,62 +71,25 @@
                         <!-- Latest News Widget -->
                         <div class="single-widget-area news-widget mb-30">
                             <h4>Berita Terbaru</h4>
-
-                            <!-- Single News Area -->
-                            <div class="single-blog-post d-flex style-4 mb-30">
-                                <!-- Blog Thumbnail -->
-                                <div class="blog-thumbnail">
-                                    <a href="#"><img src="{{asset('landing/assets/img/bg-img/16.jpg')}}" alt=""></a>
+                            @foreach ($latestPosts as $post)
+                                <div class="single-blog-post d-flex style-4 mb-30">
+                                    <div class="blog-thumbnail">
+                                        <a href="#">
+                                            @if ($post->thumbnail)
+                                                <img src="{{ asset($post->thumbnail) }}"
+                                                style="height:90px; object-fit:cover;" class="img-fluid"
+                                                alt="">
+                                            @else
+                                                <img src="{{ asset('landing/assets/img/logo-img/Logopotensiutama.png') }}" style="height:90px; object-fit:cover;" alt="">
+                                            @endif
+                                        </a>
+                                    </div>
+                                    <div class="blog-content">
+                                        <span class="post-date">{{ $post->created_at->format('M j, Y') }}</span>
+                                        <a href="#" class="post-title" title="{{$post->title}}">{{ \Illuminate\Support\Str::limit($post->title, 50, '...') }}</a>
+                                    </div>
                                 </div>
-
-                                <!-- Blog Content -->
-                                <div class="blog-content">
-                                    <span class="post-date">June 20, 2018</span>
-                                    <a href="#" class="post-title">Nearly a quarter have no emergency savings</a>
-                                </div>
-                            </div>
-
-                            <!-- Single News Area -->
-                            <div class="single-blog-post d-flex style-4 mb-30">
-                                <!-- Blog Thumbnail -->
-                                <div class="blog-thumbnail">
-                                    <a href="#"><img src="{{asset('landing/assets/img/bg-img/17.jpg')}}" alt=""></a>
-                                </div>
-
-                                <!-- Blog Content -->
-                                <div class="blog-content">
-                                    <span class="post-date">June 20, 2018</span>
-                                    <a href="#" class="post-title">Nearly a quarter have no emergency savings</a>
-                                </div>
-                            </div>
-
-                            <!-- Single News Area -->
-                            <div class="single-blog-post d-flex style-4 mb-30">
-                                <!-- Blog Thumbnail -->
-                                <div class="blog-thumbnail">
-                                    <a href="#"><img src="{{asset('landing/assets/img/bg-img/18.jpg')}}" alt=""></a>
-                                </div>
-
-                                <!-- Blog Content -->
-                                <div class="blog-content">
-                                    <span class="post-date">June 20, 2018</span>
-                                    <a href="#" class="post-title">Top bitcoin exchange says over $30 million stolen</a>
-                                </div>
-                            </div>
-
-                            <!-- Single News Area -->
-                            <div class="single-blog-post d-flex style-4 mb-30">
-                                <!-- Blog Thumbnail -->
-                                <div class="blog-thumbnail">
-                                    <a href="#"><img src="{{asset('landing/assets/img/bg-img/19.jpg')}}" alt=""></a>
-                                </div>
-
-                                <!-- Blog Content -->
-                                <div class="blog-content">
-                                    <span class="post-date">June 20, 2018</span>
-                                    <a href="#" class="post-title">Top bitcoin exchange says over $30 million stolen</a>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
