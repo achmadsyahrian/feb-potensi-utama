@@ -1,33 +1,25 @@
 @extends('landing.layouts.app')
 {{-- Head --}}
-{{-- @section('title', $title . ' - Universitas Potensi Utama')
+@section('title', $title . ' - Universitas Potensi Utama')
+@section('meta_keywords', 'berita upu, berita potensi utama, berita pendidikan, berita kampus upu')
+@section('canonical', 'https://potensi-utama.ac.id/berita/' . $post->slug)
 @section('meta_description',  Str::limit($post->title, 100))
-@if ($title == 'Berita')
-    @section('meta_keywords', 'berita upu, berita potensi utama, berita pendidikan, berita kampus upu')
-    @section('canonical', 'https://potensi-utama.ac.id/berita/' . $post->slug)
-@elseif($title == 'Pengumuman')
-    @section('meta_keywords', 'pengumuman upu, pengumuman potensi utama, pengumuman pendidikan, pengumuman kampus upu, upu info')
-    @section('canonical', 'https://potensi-utama.ac.id/pengumuman/' . $post->slug)
-@elseif($title == 'Pengabdian Masyarakat')
-    @section('meta_keywords', 'abdimas upu, abdimas potensi utama, abdimas pendidikan, abdimas kampus upu, pengabdian masyarakat potensi utama')
-    @section('canonical', 'https://potensi-utama.ac.id/pengabdian-masyarakat/' . $post->slug)
-@endif --}}
 
 @section('content')
 
     @include('landing.partials.breaking-news')
 
-    <div class="post-details-title-area bg-overlay clearfix" style="background-image: url({{asset('landing/assets/img/building-img/gedung-b.jpg')}})">
+    <div class="post-details-title-area bg-overlay clearfix" style="background-image: url({{ asset($post->thumbnail) }})">
         <div class="container-fluid h-100">
             <div class="row h-100 align-items-center">
-                <div class="col-12 col-lg-8">
+                <div class="col-12 col-lg-12">
                     <!-- Post Content -->
                     <div class="post-content">
                         <p class="tag"><span>Berita</span></p>
-                        <p class="post-title">Judul Berita Disini</p>
+                        <p class="post-title">{{$post->title}}</p>
                         <div class="d-flex align-items-center">
-                            <span class="post-date mr-30">June 20, 2018</span>
-                            <span class="post-date">By Achmad Syahrian</span>
+                            <span class="post-date mr-30">{{ $post->created_at->format('M j, Y') }}</span>
+                            <span class="post-date">By {{$post->user->name}}</span>
                         </div>
                     </div>
                 </div>

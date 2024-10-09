@@ -14,7 +14,7 @@
                 <div class="col-12 col-lg-9">
                     <!-- Post Content -->
                     <div class="post-content">
-                        <p class="tag"><span>Berita</span></p>
+                        <p class="tag"><span>Pengumuman</span></p>
                         <a href="#" class="post-title">{{env('APP_NAME')}}</a>
                         <p>Selamat datang di halaman Berita dan Informasi {{env('APP_NAME')}} Universitas Potensi Utama. Di sini, Anda dapat menemukan berbagai update terkini, mulai dari kegiatan akademik, prestasi mahasiswa. Temukan informasi terbaru mengenai inovasi, kerjasama, dan program-program unggulan yang menjadi bagian dari komitmen kami untuk terus maju dalam dunia pendidikan.</p>
                         {{-- <span class="post-date">June 20, 2018</span> --}}
@@ -52,13 +52,13 @@
                             </div>
                             <nav>
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                    <a class="nav-item nav-link active" id="nav1" data-toggle="tab" href="#berita" role="tab" aria-controls="berita" aria-selected="true">{{$totalData}} Total</a>
+                                    <a class="nav-item nav-link active" id="nav1" data-toggle="tab" href="#pengumuman" role="tab" aria-controls="pengumuman" aria-selected="true">{{$totalData}} Total</a>
                                 </div>
                             </nav>
                         </div>                        
 
                         <div class="tab-content" id="nav-tabContent">                            
-                            <div class="tab-pane fade show active" id="berita" role="tabpanel" aria-labelledby="nav3">
+                            <div class="tab-pane fade show active" id="pengumuman" role="tabpanel" aria-labelledby="nav3">
                                 <div class="row">
                                     @foreach($data as $index => $post)
                                         @if($index < 1)
@@ -122,7 +122,7 @@
                         @if (!$data->isEmpty())
                             <x-landing-pagination :data="$data"></x-landing-pagination>
                         @else
-                            <p class="text-center">Tidak ada berita <i class="far fa-sad-cry"></i></p>
+                            <p class="text-center">Tidak ada pengumuman <i class="far fa-sad-cry"></i></p>
                         @endif
                     </div>
                 </div>
@@ -149,7 +149,7 @@
 
                         <!-- Recent Post -->
                         <div class="single-widget-area news-widget mb-30">
-                            <h4>Berita Terbaru</h4>
+                            <h4>Pengumuman Terbaru</h4>
                             @foreach ($dataRecent as $post)
                                 <div class="single-blog-post d-flex style-4 mb-30">
                                     <!-- Blog Thumbnail -->

@@ -65,7 +65,7 @@
                                             <div class="single-blog-post style-2 mb-5">
                                                 <!-- Blog Thumbnail -->
                                                 <div class="blog-thumbnail position-relative">
-                                                    <a href="#">
+                                                    <a href="{{route('landing.news.show', $post->slug)}}">
                                                         @if ($post->thumbnail)
                                                             <img src="{{ asset($post->thumbnail) }}"
                                                                     style="height:400px; object-fit:cover;" class="img-fluid" alt="">
@@ -81,8 +81,8 @@
                                                 <!-- Blog Content -->
                                                 <div class="blog-content">
                                                     <span class="post-date">{{ $post->created_at->format('M j, Y') }}</span>
-                                                    <a href="#" class="post-title" title="{{ $post->title }}">{{ \Illuminate\Support\Str::limit($post->title, 50, '...') }}</a>
-                                                    <a href="#" class="post-author ">By {{ $post->user->name }}</a>
+                                                    <a href="{{route('landing.news.show', $post->slug)}}" class="post-title" title="{{ $post->title }}">{{ \Illuminate\Support\Str::limit($post->title, 50, '...') }}</a>
+                                                    <a href="{{route('landing.news.show', $post->slug)}}" class="post-author ">By {{ $post->user->name }}</a>
                                                     <x-filtered-content :content="$post->content" class="mt-4" />
                                                 </div>
                                             </div>
@@ -91,7 +91,7 @@
                                         <div class="single-blog-post d-flex flex-wrap style-5 mb-30">
                                             <!-- Blog Thumbnail -->
                                             <div class="blog-thumbnail position-relative">
-                                                <a href="#">
+                                                <a href="{{route('landing.news.show', $post->slug)}}">
                                                     @if ($post->thumbnail)
                                                         <img src="{{ asset($post->thumbnail) }}"
                                                         style="width:600px; height:250px; object-fit:cover;" class="img-fluid"
@@ -106,8 +106,8 @@
                                             <!-- Blog Content -->
                                             <div class="blog-content">
                                                 <span class="post-date">{{ $post->created_at->format('M j, Y') }}</span>
-                                                <a href="#" class="post-title" title="{{$post->title}}">{{ \Illuminate\Support\Str::limit($post->title, 50, '...') }}</a>
-                                                <a href="#" class="post-author mb-0">By {{$post->user->name}}</a>
+                                                <a href="{{route('landing.news.show', $post->slug)}}" class="post-title" title="{{$post->title}}">{{ \Illuminate\Support\Str::limit($post->title, 50, '...') }}</a>
+                                                <a href="{{route('landing.news.show', $post->slug)}}" class="post-author mb-0">By {{$post->user->name}}</a>
                                                 <x-filtered-content :content="$post->content" class="mt-4" size='200'/>
                                             </div>
                                         </div>
