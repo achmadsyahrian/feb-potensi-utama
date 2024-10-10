@@ -224,7 +224,7 @@
                         <div class="single-blog-post style-2 mb-5">
                             <div class="blog-content">
                                 <span class="post-date">{{ $post->created_at->format('M j, Y') }}</span>
-                                <a href="#" class="post-title" title="{{$post->title}}">{{ \Illuminate\Support\Str::limit($post->title, 50, '...') }}</a>
+                                <a href="{{route('landing.announcement.show', $post->slug)}}" class="post-title" title="{{$post->title}}">{{ \Illuminate\Support\Str::limit($post->title, 50, '...') }}</a>
                                 <a href="#" class="post-author">By {{$post->user->name}}</a>
                             </div>
                         </div>

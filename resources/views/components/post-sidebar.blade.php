@@ -2,6 +2,15 @@
 
 <div class="sidebar-area">
 
+    {{-- Search --}}
+    <div class="single-widget-area newsletter-widget mb-30">
+        <h4>Pencarian <i class="fas fa-search"></i></h4>
+        <form action="{{route('landing.'. $route .'.index')}}" method="get">
+            <input type="text" name="s" id="nlemail" placeholder="Masukkan judul" value="{{request('s')}}">
+            <button type="submit" class="btn newsbox-btn w-100">Cari</button>
+        </form>
+    </div>
+    
    <!-- Add Widget -->
    <div class="single-widget-area add-widget mb-30">
        <a href="#">
