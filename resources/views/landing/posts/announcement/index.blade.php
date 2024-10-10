@@ -1,10 +1,10 @@
 @extends('landing.layouts.app')
 
 {{-- Head --}}
-@section('title', $title . ' - ' . env('APP_NAME') .' | Universitas Potensi Utama')
-@section('meta_description', 'Temukan berita terbaru dari Universitas Potensi Utama. Informasi pendidikan terkini, aktivitas kampus, dan prestasi mahasiswa kami.')
-@section('meta_keywords', 'berita upu, berita potensi utama, berita pendidikan, berita kampus upu')
-@section('canonical', 'https://potensi-utama.ac.id/berita')
+@section('title', $title . ' - ' . env('APP_NAME'))
+@section('meta_description', 'Baca pengumuman informasi terbaru dari '.env('APP_NAME').' Universitas Potensi Utama. Informasi fakultas terkini, aktivitas fakultas, dan prestasi mahasiswa kami.')
+@section('meta_keywords', 'pengumuman feb upu, pengumuman feb potensi utama, pengumuman pendidikan fakultas ekonomi bisnis, pengumuman kampus upu')
+@section('canonical', env('APP_URL').'/pengumuman')
 
 
 @section('content')

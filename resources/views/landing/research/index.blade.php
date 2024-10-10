@@ -1,9 +1,9 @@
 @extends('landing.layouts.app')
 {{-- Head --}}
-@section('title', 'Penelitian - Fakultas Ekonomi dan Bisnis')
-@section('meta_description', 'Visi Program Studi Ekonomi Syariah merupakan pernyataan yang berorientasi ke masa depan tentang apa yang diharapkan oleh Program Studi Ekonomi Syariah yang dapat dipaparkan secara jelas.')
+@section('title', 'Penelitian - '. env('APP_NAME'))
+@section('meta_description', env('APP_NAME').' Universitas Potensi Utama aktif dalam penelitian yang mendorong inovasi di bidang ekonomi dan bisnis, berkontribusi pada perkembangan akademik dan industri')
 @section('meta_keywords', 'penelitian feb upu, penelitian feb potensi utama, penelitian feb, penelitian feb potensi utama')
-@section('canonical', 'https://feb.potensi-utama.ac.id/visi-misi')
+@section('canonical', env('APP_URL').'/penelitian')
 
 @section('content')
 

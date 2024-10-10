@@ -1,9 +1,9 @@
 @extends('landing.layouts.app')
 {{-- Head --}}
-@section('title', 'Visi Misi - Fakultas Ekonomi dan Bisnis')
-@section('meta_description', 'Visi Program Studi Ekonomi Syariah merupakan pernyataan yang berorientasi ke masa depan tentang apa yang diharapkan oleh Program Studi Ekonomi Syariah yang dapat dipaparkan secara jelas.')
+@section('title', 'Visi Misi - ' . env('APP_NAME'))
+@section('meta_description', env('APP_NAME') .' Universitas Potensi Utama berkomitmen untuk menciptakan lingkungan belajar yang inovatif, dengan visi dan misi yang mendukung pengembangan akademis dan profesional mahasiswa')
 @section('meta_keywords', 'visi feb upu, misi feb potensi utama, visi misi feb, visi misi feb potensi utama')
-@section('canonical', 'https://feb.potensi-utama.ac.id/visi-misi')
+@section('canonical', env('APP_URL').'/visi-misi')
 
 @section('content')
 

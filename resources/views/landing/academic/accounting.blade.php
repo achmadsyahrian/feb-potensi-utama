@@ -1,10 +1,9 @@
 @extends('landing.layouts.app')
 {{-- Head --}}
-@section('title', 'Program Studi Akuntansi - Fakultas Perbankan dan Bisnis')
-@section('meta_description', 'Program Studi Akuntansi - Fakultas Perbankan dan Bisnis')
-@section('meta_keywords', 'prodi akuntansi upu, akuntansi potensi utama, visi misi akuntansi upu, berita akuntansi potensi utama')
-@section('canonical', 'https://feb.potensi-utama.ac.id/program-studi/akuntansi')
-
+@section('title', 'Program Studi Akuntansi - '. env('APP_NAME'))
+@section('meta_description', 'Program Studi Akuntansi - '. env('APP_NAME'))
+@section('meta_keywords', 'akuntansi upu, akuntansi potensi utama, visi misi akuntansi upu, berita akuntansi potensi utama')
+@section('canonical', env('APP_URL').'/program-studi/akuntansi')
 @section('content')
 
    @include('landing.partials.breaking-news')

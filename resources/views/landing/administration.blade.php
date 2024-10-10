@@ -1,11 +1,10 @@
 @extends('landing.layouts.app')
 {{-- Head --}}
-@section('title', 'Administrasi - Fakultas Ekonomi dan Bisnis')
-@section('meta_description', 'Visi Program Studi Ekonomi Syariah merupakan pernyataan yang berorientasi ke masa depan
-    tentang apa yang diharapkan oleh Program Studi Ekonomi Syariah yang dapat dipaparkan secara jelas.')
+@section('title', 'Administrasi - '. env('APP_NAME'))
+@section('meta_description', 'Lengkapi berkas administrasi perkuliahan kamu di '. env('APP_NAME') .' Universitas Potensi Utama')
 @section('meta_keywords', 'administrasi feb upu, administrasi feb potensi utama, administrasi feb, administrasi feb potensi
     utama')
-@section('canonical', 'https://feb.potensi-utama.ac.id/visi-misi')
+@section('canonical', env('APP_URL').'/administrasi')
 
 @section('content')
 

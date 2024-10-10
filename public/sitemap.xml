@@ -2,47 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
     <url>
         <loc>http://feb-potensi-utama.test</loc>
-        <lastmod>2024-10-10T03:03:09+00:00</lastmod>
-
-            </url>
-    <url>
-        <loc>http://feb-potensi-utama.test/sejarah</loc>
-        <lastmod>2024-10-10T03:03:09+00:00</lastmod>
+        <lastmod>2024-10-10T06:55:55+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://feb-potensi-utama.test/visi-misi</loc>
-        <lastmod>2024-10-10T03:03:09+00:00</lastmod>
+        <lastmod>2024-10-10T06:55:55+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/akreditasi</loc>
-        <lastmod>2024-10-10T03:03:09+00:00</lastmod>
+        <loc>http://feb-potensi-utama.test/ekonomi-syariah</loc>
+        <lastmod>2024-10-10T06:55:55+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/fasilitas</loc>
-        <lastmod>2024-10-10T03:03:09+00:00</lastmod>
+        <loc>http://feb-potensi-utama.test/perbankan-syariah</loc>
+        <lastmod>2024-10-10T06:55:55+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://feb-potensi-utama.test/akuntansi</loc>
+        <lastmod>2024-10-10T06:55:55+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://feb-potensi-utama.test/manajemen</loc>
+        <lastmod>2024-10-10T06:55:55+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://feb-potensi-utama.test/berita</loc>
-        <lastmod>2024-10-10T03:03:09+00:00</lastmod>
+        <lastmod>2024-10-10T06:55:55+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://feb-potensi-utama.test/pengumuman</loc>
-        <lastmod>2024-10-10T03:03:09+00:00</lastmod>
-
-            </url>
-    <url>
-        <loc>http://feb-potensi-utama.test/pengabdian-masyarakat</loc>
-        <lastmod>2024-10-10T03:03:09+00:00</lastmod>
+        <lastmod>2024-10-10T06:55:55+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://feb-potensi-utama.test/penelitian</loc>
-        <lastmod>2024-10-10T03:03:09+00:00</lastmod>
+        <lastmod>2024-10-10T06:55:55+00:00</lastmod>
 
             </url>
     <url>
@@ -168,11 +168,6 @@
     <url>
         <loc>http://feb-potensi-utama.test/berita/ora-nelson</loc>
         <lastmod>2024-10-10T02:32:32+00:00</lastmod>
-
-            </url>
-    <url>
-        <loc>http://feb-potensi-utama.test/berita/asdasdadd</loc>
-        <lastmod>2024-10-10T03:03:08+00:00</lastmod>
 
             </url>
 </urlset>

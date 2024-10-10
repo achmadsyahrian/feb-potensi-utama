@@ -1,9 +1,9 @@
 @extends('landing.layouts.app')
 {{-- Head --}}
-@section('title', 'Program Studi Ekonomi Syariah - Fakultas Ekonomi dan Bisnis')
-@section('meta_description', 'Program Studi Ekonomi Syariah - Fakultas Ekonomi dan Bisnis')
+@section('title', 'Program Studi Ekonomi Syariah - '. env('APP_NAME'))
+@section('meta_description', 'Program Studi Ekonomi Syariah - '. env('APP_NAME'))
 @section('meta_keywords', 'eks upu, ekonomi syariah potensi utama, visi misi ekonomi syariah upu, berita ekonomi syariah potensi utama')
-@section('canonical', 'https://feb.potensi-utama.ac.id/program-studi/ekonomi-syariah')
+@section('canonical', env('APP_URL').'/program-studi/ekonomi-syariah')
 
 @section('content')
 

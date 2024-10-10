@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
 
     <meta name="description" content="@yield('meta_description', 'Selamat datang di situs online ' . env('APP_NAME') . ' Universitas Potensi Utama')">
-    <meta name="keywords" content="@yield('meta_keywords', 'universitas potensi utama, potensiutama, potensi utama, kampus, pendidikan, upu medan')">
-    <link rel="canonical" href="@yield('canonical', 'https://feb.potensi-utama.ac.id/')">
+    <meta name="keywords" content="@yield('meta_keywords', 'feb universitas potensi utama, feb potensiutama, potensi utama, kampus feb, pendidikan, feb upu medan')">
+    <link rel="canonical" href="@yield('canonical', env('APP_URL'))">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

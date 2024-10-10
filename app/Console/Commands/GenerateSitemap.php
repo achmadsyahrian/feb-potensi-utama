@@ -21,26 +21,32 @@ class GenerateSitemap extends Command
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
                 ->setPriority(1.0)
             )
-            // Sejarah
-            ->add(Url::create('/sejarah')
-                ->setLastModificationDate(now())
-                ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
-                ->setPriority(0.8)
-            )
             // Visi Misi
             ->add(Url::create('/visi-misi')
                 ->setLastModificationDate(now())
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
                 ->setPriority(0.8)
             )
-            // Akreditasi
-            ->add(Url::create('/akreditasi')
+            // Ekonomi Syariah
+            ->add(Url::create('/ekonomi-syariah')
                 ->setLastModificationDate(now())
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
                 ->setPriority(0.8)
             )
-            // Fasilitas
-            ->add(Url::create('/fasilitas')
+            // Perbankan Syariah
+            ->add(Url::create('/perbankan-syariah')
+                ->setLastModificationDate(now())
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+                ->setPriority(0.8)
+            )
+            // Akuntansi
+            ->add(Url::create('/akuntansi')
+                ->setLastModificationDate(now())
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+                ->setPriority(0.8)
+            )
+            // Manajemen
+            ->add(Url::create('/manajemen')
                 ->setLastModificationDate(now())
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
                 ->setPriority(0.8)
@@ -56,12 +62,6 @@ class GenerateSitemap extends Command
                 ->setLastModificationDate(now())
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
                 ->setPriority(0.9)
-            )
-            // Pengabdian Masyarakat
-            ->add(Url::create('/pengabdian-masyarakat')
-                ->setLastModificationDate(now())
-                ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
-                ->setPriority(0.8)
             )
             // Penelitian
             ->add(Url::create('/penelitian')

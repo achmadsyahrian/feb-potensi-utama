@@ -1,9 +1,9 @@
 @extends('landing.layouts.app')
 {{-- Head --}}
-@section('title', 'Program Studi Perbankan Syariah - Fakultas Perbankan dan Bisnis')
-@section('meta_description', 'Program Studi Perbankan Syariah - Fakultas Perbankan dan Bisnis')
-@section('meta_keywords', 'eks upu, perbankan syariah potensi utama, visi misi perbankan syariah upu, berita perbankan syariah potensi utama')
-@section('canonical', 'https://feb.potensi-utama.ac.id/program-studi/perbankan-syariah')
+@section('title', 'Program Studi Perbankan Syariah - '. env('APP_NAME'))
+@section('meta_description', 'Program Studi Perbankan Syariah - '. env('APP_NAME'))
+@section('meta_keywords', 'ps upu, perbankan syariah potensi utama, visi misi perbankan syariah upu, berita perbankan syariah potensi utama')
+@section('canonical', env('APP_URL').'/program-studi/perbankan-syariah')
 
 @section('content')
 

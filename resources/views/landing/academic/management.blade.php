@@ -1,9 +1,9 @@
 @extends('landing.layouts.app')
 {{-- Head --}}
-@section('title', 'Program Studi Manajemen - Fakultas Perbankan dan Bisnis')
-@section('meta_description', 'Program Studi Manajemen - Fakultas Perbankan dan Bisnis')
+@section('title', 'Program Studi Manajemen - '. env('APP_NAME'))
+@section('meta_description', 'Program Studi Manajemen - '. env('APP_NAME'))
 @section('meta_keywords', 'manajemen upu, manajemen potensi utama, visi misi manajemen upu, berita manajemen potensi utama')
-@section('canonical', 'https://feb.potensi-utama.ac.id/program-studi/manajemen')
+@section('canonical', env('APP_URL').'/program-studi/manajemen')
 
 @section('content')
 

@@ -1,11 +1,10 @@
 @extends('landing.layouts.app')
 {{-- Head --}}
-@section('title', 'Kontak Fakultas - Fakultas Ekonomi dan Bisnis')
-@section('meta_description', 'Visi Program Studi Ekonomi Syariah merupakan pernyataan yang berorientasi ke masa depan
-    tentang apa yang diharapkan oleh Program Studi Ekonomi Syariah yang dapat dipaparkan secara jelas.')
-@section('meta_keywords', 'administrasi feb upu, administrasi feb potensi utama, administrasi feb, administrasi feb potensi
+@section('title', 'Kontak Fakultas - '. env('APP_NAME'))
+@section('meta_description', 'Dapatkan informasi kontak '. env('APP_NAME') .' Universitas Potensi Utama. Kami siap membantu Anda dengan pertanyaan tentang program studi dan layanan akademik.')
+@section('meta_keywords', 'kontak feb upu, kontak feb potensi utama, kontak feb, kontak feb potensi
     utama')
-@section('canonical', 'https://feb.potensi-utama.ac.id/visi-misi')
+@section('canonical', env('APP_URL').'/kontak-fakultas')
 
 @section('content')
 
