@@ -11,9 +11,9 @@
                     <!-- Footer Nav -->
                     <div class="footer-nav">
                         <ul>
-                            <li><a href="#">Kontak Fakultas</a></li>
-                            <li><a href="#">Berita & Informasi</a></li>
-                            <li><a href="#">Administrasi</a></li>
+                            <li><a href="{{route('landing.contact')}}">Kontak Fakultas</a></li>
+                            <li><a href="{{route('landing.news.index')}}">Berita</a></li>
+                            <li><a href="{{route('landing.administration.index')}}">Administrasi</a></li>
                         </ul>
                     </div>
                     <!-- Social Info -->

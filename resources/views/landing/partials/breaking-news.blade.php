@@ -11,7 +11,7 @@
                    <div id="breakingNewsTicker" class="ticker">
                       <ul>
                         @foreach($latestAnnouncement as $announcement)
-                            <li><a href="#">{{ $announcement->title }}</a></li>
+                            <li><a href="{{route('landing.announcement.show', $announcement->slug)}}">{{ $announcement->title }}</a></li>
                         @endforeach
                       </ul>
                    </div>

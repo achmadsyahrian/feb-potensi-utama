@@ -20,7 +20,7 @@
 
    <!-- Recent Post -->
    <div class="single-widget-area news-widget mb-30">
-       <h4>Berita Terbaru</h4>
+       <h4>{{($route == 'news') ? 'Berita' : 'Pengumuman' }} Terbaru</h4>
        @foreach ($dataRecent as $post)
            <div class="single-blog-post d-flex style-4 mb-30">
                <!-- Blog Thumbnail -->
