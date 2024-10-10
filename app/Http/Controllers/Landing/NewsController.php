@@ -107,7 +107,8 @@ class NewsController extends Controller
                         ->get();
                         
         $tags = Tag::all();
+        $categories = Category::all();
 
-        return view('landing.posts.news.detail', compact('post', 'dataRecent', 'tags', 'title', 'route'));
+        return view('landing.posts.news.detail', compact('post', 'dataRecent', 'tags', 'title', 'route', 'categories'));
     }
 }

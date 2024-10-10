@@ -1590,5 +1590,30 @@ img {
   z-index: 1;
 }
 
+.content img {
+  max-width: 100%;
+  width: 500px;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.content .attachment__caption .attachment__name {
+  display: block;
+  margin: 0 auto;
+}
+
+.content .attachment__caption .attachment__size {
+  display: none;
+}
+
+.content .files-name:hover {
+  color: red;
+}
+
+.content a {
+  color: blue; /* Menggunakan warna default browser */
+  text-decoration: underline; /* Mengatur underline default */
+}
 
 /*# sourceMappingURL=style.css.map */

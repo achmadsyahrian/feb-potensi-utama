@@ -6,7 +6,7 @@
                 <div class="single-blog-post style-2 mb-5">
                     <!-- Blog Thumbnail -->
                     <div class="blog-thumbnail">
-                        <a href="#">
+                        <a href="{{route('landing.news.show', $post->slug)}}">
                             @if ($post->thumbnail)
                                 <img src="{{ asset($post->thumbnail) }}" style="height:240px; object-fit:cover;"
                                     class="img-fluid" alt="">
@@ -20,7 +20,7 @@
                     <!-- Blog Content -->
                     <div class="blog-content">
                         <span class="post-date">{{ $post->created_at->format('M j, Y') }}</span>
-                        <a href="#" class="post-title"
+                        <a href="{{route('landing.news.show', $post->slug)}}" class="post-title"
                             title="{{ $post->title }}">{{ \Illuminate\Support\Str::limit($post->title, 50, '...') }}</a>
                         <a href="#" class="post-author">By {{ $post->user->name }}</a>
                     </div>

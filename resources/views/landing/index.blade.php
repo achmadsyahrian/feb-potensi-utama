@@ -19,7 +19,7 @@
                                     data-duration="1000ms">
                                     <!-- Blog Thumbnail -->
                                     <div class="blog-thumbnail bg-overlay">
-                                        <a href="#">
+                                        <a href="{{route('landing.news.show', $latestNews[0]->slug)}}">
                                             @if ($latestNews[0]->thumbnail)
                                                 <img src="{{ asset($latestNews[0]->thumbnail) }}"
                                                 style="height:500px; object-fit:cover;" class="img-fluid"
@@ -33,7 +33,7 @@
                                     <!-- Blog Content -->
                                     <div class="blog-content">
                                         <span class="post-date">{{ $latestNews[0]->created_at->format('M j, Y') }}</span>
-                                        <a href="#" class="post-title">{{ $latestNews[0]->title }}</a>
+                                        <a href="{{route('landing.news.show', $latestNews[0]->slug)}}" class="post-title">{{ $latestNews[0]->title }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -44,7 +44,7 @@
                                     data-duration="1000ms">
                                     <!-- Blog Thumbnail -->
                                     <div class="blog-thumbnail bg-overlay">
-                                        <a href="#">
+                                        <a href="{{route('landing.news.show', $latestNews[1]->slug)}}">
                                             @if ($latestNews[1]->thumbnail)
                                             <img src="{{ asset($latestNews[1]->thumbnail) }}"
                                                 style="height:235px; object-fit:cover;" class="img-fluid"
@@ -58,7 +58,7 @@
                                     <!-- Blog Content -->
                                     <div class="blog-content">
                                         <span class="post-date">{{ $latestNews[1]->created_at->format('M j, Y') }}</span>
-                                        <a href="#" class="post-title">{{ $latestNews[1]->title }}</a>
+                                        <a href="{{route('landing.news.show', $latestNews[1]->slug)}}" class="post-title">{{ $latestNews[1]->title }}</a>
                                     </div>
                                 </div>
                                 <!-- Single Blog Post Area -->
@@ -66,7 +66,7 @@
                                     data-duration="1000ms">
                                     <!-- Blog Thumbnail -->
                                     <div class="blog-thumbnail bg-overlay">
-                                        <a href="#">
+                                        <a href="{{route('landing.news.show', $latestNews[2]->slug)}}">
                                             @if ($latestNews[2]->thumbnail)
                                                 <img src="{{ asset($latestNews[2]->thumbnail) }}"
                                                     style="height:235px; object-fit:cover;" class="img-fluid"
@@ -80,7 +80,7 @@
                                     <!-- Blog Content -->
                                     <div class="blog-content">
                                         <span class="post-date">{{ $latestNews[2]->created_at->format('M j, Y') }}</span>
-                                        <a href="#" class="post-title">{{ $latestNews[2]->title }}</a>
+                                        <a href="{{route('landing.news.show', $latestNews[2]->slug)}}" class="post-title">{{ $latestNews[2]->title }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -113,7 +113,7 @@
                                                 <div class="single-blog-post style-2 mb-5">
                                                     <!-- Blog Thumbnail -->
                                                     <div class="blog-thumbnail position-relative">
-                                                        <a href="#">
+                                                        <a href="{{route('landing.news.show', $post->slug)}}">
                                                             @if ($post->thumbnail)
                                                                 <img src="{{ asset($post->thumbnail) }}"
                                                                 style="height:240px; object-fit:cover;" class="img-fluid"
@@ -128,8 +128,8 @@
                                                     <!-- Blog Content -->
                                                     <div class="blog-content">
                                                         <span class="post-date">{{ $post->created_at->format('M j, Y') }}</span>
-                                                        <a href="#" class="post-title" title="{{$post->title}}">{{ \Illuminate\Support\Str::limit($post->title, 50, '...') }}</a>
-                                                        <a href="#" class="post-author">By {{$post->user->name}}</a>
+                                                        <a href="{{route('landing.news.show', $post->slug)}}" class="post-title" title="{{$post->title}}">{{ \Illuminate\Support\Str::limit($post->title, 50, '...') }}</a>
+                                                        <a href="{{route('landing.news.show', $post->slug)}}" class="post-author">By {{$post->user->name}}</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -138,7 +138,7 @@
                                                 <div class="single-blog-post d-flex style-4 mb-30">
                                                     <!-- Blog Thumbnail -->
                                                     <div class="blog-thumbnail">
-                                                        <a href="#">
+                                                        <a href="{{route('landing.news.show', $post->slug)}}">
                                                             @if ($post->thumbnail)
                                                                 <img src="{{ asset($post->thumbnail) }}"
                                                                 style="height:90px; object-fit:cover;" class="img-fluid"
@@ -152,7 +152,7 @@
                                                     <!-- Blog Content -->
                                                     <div class="blog-content">
                                                         <span class="post-date">{{ $post->created_at->format('M j, Y') }}</span>
-                                                        <a href="#" class="post-title" title="{{$post->title}}">{{ \Illuminate\Support\Str::limit($post->title, 50, '...') }}</a>
+                                                        <a href="{{route('landing.news.show', $post->slug)}}" class="post-title" title="{{$post->title}}">{{ \Illuminate\Support\Str::limit($post->title, 50, '...') }}</a>
                                                     </div>
                                                 </div>
                                             </div>

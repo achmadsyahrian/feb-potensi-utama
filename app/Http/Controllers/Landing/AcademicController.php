@@ -10,9 +10,12 @@ class AcademicController extends Controller
 {
     public function economy() {
         $latestPosts = Post::where('type', 'news')
-            ->where('category_id', 1)
-            ->orWhereHas('tags', function ($query) {
-                $query->where('tags.id', 1);
+            ->where('is_published', 1)
+            ->where(function ($query) {
+                $query->where('category_id', 1)
+                    ->orWhereHas('tags', function ($query) {
+                        $query->where('tags.id', 1);
+                    });
             })
             ->orderBy('created_at', 'desc')
             ->take(3)
@@ -24,9 +27,12 @@ class AcademicController extends Controller
 
     public function banking() {
         $latestPosts = Post::where('type', 'news')
-            ->where('category_id', 2)
-            ->orWhereHas('tags', function ($query) {
-                $query->where('tags.id', 2);
+            ->where('is_published', 1)
+            ->where(function ($query) {
+                $query->where('category_id', 2)
+                    ->orWhereHas('tags', function ($query) {
+                        $query->where('tags.id', 2);
+                    });
             })
             ->orderBy('created_at', 'desc')
             ->take(3)
@@ -37,9 +43,12 @@ class AcademicController extends Controller
 
     public function accounting() {
         $latestPosts = Post::where('type', 'news')
-            ->where('category_id', 3)
-            ->orWhereHas('tags', function ($query) {
-                $query->where('tags.id', 3);
+            ->where('is_published', 1)
+            ->where(function ($query) {
+                $query->where('category_id', 3)
+                    ->orWhereHas('tags', function ($query) {
+                        $query->where('tags.id', 3);
+                    });
             })
             ->orderBy('created_at', 'desc')
             ->take(3)
@@ -50,9 +59,12 @@ class AcademicController extends Controller
 
     public function management() {
         $latestPosts = Post::where('type', 'news')
-            ->where('category_id', 4)
-            ->orWhereHas('tags', function ($query) {
-                $query->where('tags.id', 4);
+            ->where('is_published', 1)
+            ->where(function ($query) {
+                $query->where('category_id', 4)
+                    ->orWhereHas('tags', function ($query) {
+                        $query->where('tags.id', 4);
+                    });
             })
             ->orderBy('created_at', 'desc')
             ->take(3)

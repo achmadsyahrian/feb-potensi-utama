@@ -74,7 +74,7 @@
                             @foreach ($latestPosts as $post)
                                 <div class="single-blog-post d-flex style-4 mb-30">
                                     <div class="blog-thumbnail">
-                                        <a href="#">
+                                        <a href="{{route('landing.news.show', $post->slug)}}">
                                             @if ($post->thumbnail)
                                                 <img src="{{ asset($post->thumbnail) }}"
                                                 style="height:90px; object-fit:cover;" class="img-fluid"
@@ -86,7 +86,7 @@
                                     </div>
                                     <div class="blog-content">
                                         <span class="post-date">{{ $post->created_at->format('M j, Y') }}</span>
-                                        <a href="#" class="post-title" title="{{$post->title}}">{{ \Illuminate\Support\Str::limit($post->title, 50, '...') }}</a>
+                                        <a href="{{route('landing.news.show', $post->slug)}}" class="post-title" title="{{$post->title}}">{{ \Illuminate\Support\Str::limit($post->title, 50, '...') }}</a>
                                     </div>
                                 </div>
                             @endforeach

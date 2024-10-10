@@ -9,7 +9,7 @@
 
     @include('landing.partials.breaking-news')
 
-    <div class="post-details-title-area bg-overlay clearfix" style="background-image: url({{ asset($post->thumbnail) }})">
+    <div class="post-details-title-area bg-overlay clearfix" style="background-image: url('{{ $post->thumbnail ? asset($post->thumbnail) : asset('landing/assets/img/building-img/gedung-b.jpg') }}')">
         <div class="container-fluid h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12 col-lg-12">
@@ -33,105 +33,51 @@
                 <!-- Post Details Content Area -->
                 <div class="col-12 col-lg-8">
                     <div class="post-details-content mb-100">
-                        <p>Nullam lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum. Etiam pretium turpis eget nibh laoreet iaculis. Proin ac urna at lectus volutpat lobortis. Vestibulum venenatis iaculis diam vitae lobortis. Donec tincidunt viverra elit, sed consectetur est pr etium ac.</p>
-                        <p>Mauris nec mauris tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elit nisl, faucibus eu tempus vel, imperdiet at felis. Sed sed nibh et augue feugiat pharetra. Praesent ultrices nec tortor et gravida. Sed id rhoncus est. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur vitae luctus turpis. Maecenas diam ex, mattis vel dolor ut, fermentum consectetur ex.</p>
-                        <img class="mb-30" src="{{asset('landing/assets/img/bg-img/31.jpg')}}" alt="">
-                        <p>Nullam lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum. Etiam pretium turpis eget nibh laoreet iaculis. Proin ac urna at lectus volutpat lobortis. Vestibulum venenatis iaculis diam vitae lobortis. Donec tincidunt viverra elit, sed consectetur est pr etium ac.</p>
-                        <p>Mauris nec mauris tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elit nisl, faucibus eu tempus vel, imperdiet at felis. Sed sed nibh et augue feugiat pharetra. Praesent ultrices nec tortor et gravida. Sed id rhoncus est. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur vitae luctus turpis. Maecenas diam ex, mattis vel dolor ut, fermentum consectetur ex. </p>
-                        <h5 class="mb-30">A good news after all</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elit nisl, faucibus eu tempus vel, imperdiet at felis. Sed sed nibh et augue feugiat pharetra. Praesent ultrices nec tortor et gravida. Sed id rhoncus est. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur vitae luctus turpis. Maecenas diam ex, mattis vel dolor ut, fermentum consectetur ex.</p>
+                        @if ($post->thumbnail)
+                        <img class="mb-30" src="{{asset($post->thumbnail)}}" style="width:100%; height:400px; object-fit:cover;" alt="">
+                        @endif
+                        <div class="content">
+                            {!! $post->content !!}
+
+                            @if ($post->files->isNotEmpty())
+                                <h3>File Tambahan</h3>
+                                <ul>
+                                    @foreach($post->files as $file)
+                                        <li>
+                                            <a class="files-name" href="{{asset($file->file_path)}}" download>{{ $file->file_name }}</a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            @endif
+                        </div>
+                        <div class="content-footer mt-5">
+                            <p class="font-bold mb-0">Tags:</p>
+                            @forelse ($post->tags as $tag)
+                                <a href="{{ route('landing.news.tag', $tag->slug) }}" class="category-item d-inline-block mb-2 px-3 py-2 text-decoration-none">
+                                    {{ $tag->name }}
+                                </a>
+                            @empty
+                                <a>Tidak ada tags</a>
+                            @endforelse
+                        </div>
                     </div>
                 </div>
 
                 <!-- Sidebar Widget -->
                 <div class="col-12 col-sm-9 col-md-6 col-lg-4">
-                    <div class="sidebar-area">
-
-                        <!-- Add Widget -->
-                        <div class="single-widget-area add-widget mb-30">
-                            <a href="#">
-                                <img src="{{asset('landing/assets/img/ads-img/banner-daftar-manajemen.jpg')}}" alt="">
-                            </a>
-                        </div>
-
-                        <!-- Postingan Terbaru Widget -->
-                        <div class="single-widget-area news-widget mb-30">
-                            <h4>Postingan Terbaru</h4>
-
-                            <!-- Single News Area -->
-                            <div class="single-blog-post d-flex style-4 mb-30">
-                                <!-- Blog Thumbnail -->
-                                <div class="blog-thumbnail">
-                                    <a href="#"><img src="{{asset('landing/assets/img/bg-img/16.jpg')}}" alt=""></a>
-                                </div>
-
-                                <!-- Blog Content -->
-                                <div class="blog-content">
-                                    <span class="post-date">June 20, 2018</span>
-                                    <a href="#" class="post-title">Nearly a quarter have no emergency savings</a>
-                                </div>
-                            </div>
-
-                            <!-- Single News Area -->
-                            <div class="single-blog-post d-flex style-4 mb-30">
-                                <!-- Blog Thumbnail -->
-                                <div class="blog-thumbnail">
-                                    <a href="#"><img src="{{asset('landing/assets/img/bg-img/17.jpg')}}" alt=""></a>
-                                </div>
-
-                                <!-- Blog Content -->
-                                <div class="blog-content">
-                                    <span class="post-date">June 20, 2018</span>
-                                    <a href="#" class="post-title">Nearly a quarter have no emergency savings</a>
-                                </div>
-                            </div>
-
-                            <!-- Single News Area -->
-                            <div class="single-blog-post d-flex style-4 mb-30">
-                                <!-- Blog Thumbnail -->
-                                <div class="blog-thumbnail">
-                                    <a href="#"><img src="{{asset('landing/assets/img/bg-img/18.jpg')}}" alt=""></a>
-                                </div>
-
-                                <!-- Blog Content -->
-                                <div class="blog-content">
-                                    <span class="post-date">June 20, 2018</span>
-                                    <a href="#" class="post-title">Top bitcoin exchange says over $30 million stolen</a>
-                                </div>
-                            </div>
-
-                            <!-- Single News Area -->
-                            <div class="single-blog-post d-flex style-4 mb-30">
-                                <!-- Blog Thumbnail -->
-                                <div class="blog-thumbnail">
-                                    <a href="#"><img src="{{asset('landing/assets/img/bg-img/19.jpg')}}" alt=""></a>
-                                </div>
-
-                                <!-- Blog Content -->
-                                <div class="blog-content">
-                                    <span class="post-date">June 20, 2018</span>
-                                    <a href="#" class="post-title">Top bitcoin exchange says over $30 million stolen</a>
-                                </div>
-                            </div>
-
-                            <!-- Single News Area -->
-                            <div class="single-blog-post d-flex style-4 mb-30">
-                                <!-- Blog Thumbnail -->
-                                <div class="blog-thumbnail">
-                                    <a href="#"><img src="{{asset('landing/assets/img/bg-img/20.jpg')}}" alt=""></a>
-                                </div>
-
-                                <!-- Blog Content -->
-                                <div class="blog-content">
-                                    <span class="post-date">June 20, 2018</span>
-                                    <a href="#" class="post-title">Dow falls 287 points as trade war fears escalate</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <x-post-sidebar :dataRecent="$dataRecent" :categories="$categories" :tags="$tags"></x-post-sidebar>
                 </div>
             </div>
         </div>
     </section>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var content = document.querySelector('.content');
+            if (content) {
+                content.innerHTML = content.innerHTML.replace(/<strong>(.*?)<\/strong>/g, '<h3>$1</h3>');
+            }
+        });
+    </script>
     
 @endsection

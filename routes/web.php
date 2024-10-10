@@ -28,6 +28,7 @@ Route::group(['namespace' => 'Landing', 'as' => 'landing.'], function() {
         // Visi Misi
         Route::get('/visi-misi', function() {
             $latestPosts = Post::where('type', 'news')
+                ->where('is_published', 1)
                 ->orderBy('created_at', 'desc')
                 ->take(4)
                 ->get();
