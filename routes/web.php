@@ -72,9 +72,26 @@ Route::group(['namespace' => 'Landing', 'as' => 'landing.'], function() {
 
         // Penelitian
         Route::get('/penelitian', function(){
+            $latestPosts = Post::where('type', 'news')
+                ->where('is_published', 1)
+                ->orderBy('created_at', 'desc')
+                ->take(4)
+                ->get();
+
             $data = Research::find(1);
-            return view('landing.research.index', compact('data'));
+            return view('landing.research.index', compact('data', 'latestPosts'));
         })->name('research.index');
+
+        // Administrasi
+        Route::get('/administrasi', function(){
+            $latestPosts = Post::where('type', 'news')
+                ->where('is_published', 1)
+                ->orderBy('created_at', 'desc')
+                ->take(4)
+                ->get();
+
+            return view('landing.administration', compact('latestPosts'));
+        })->name('administration.index');
 
 
 });

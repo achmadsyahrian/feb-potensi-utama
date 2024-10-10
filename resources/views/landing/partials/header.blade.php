@@ -29,7 +29,7 @@
                                 <li><a href="#">Tentang Fakultas</a>
                                     <ul class="dropdown">
                                         <li><a href="{{route('landing.purpose')}}">Visi Misi</a></li>
-                                        <li><a href="#">Penelitian</a></li>
+                                        <li><a href="{{route('landing.research.index')}}">Penelitian</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#">Program Studi</a>
@@ -46,7 +46,7 @@
                                         <li><a href="{{route('landing.announcement.index')}}">Pengumuman</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Administrasi</a></li>
+                                <li><a href="{{route('landing.administration.index')}}">Administrasi</a></li>
                             </ul>
 
                             <!-- Header Add Area -->
