@@ -7,7 +7,7 @@
                 <nav class="classy-navbar justify-content-between" id="newsboxNav">
 
                     <!-- Nav brand -->
-                    <a href="{{route('landing.home')}}" class="nav-brand"><img src="{{asset('landing/assets/img/logo-img/logo-feb.png')}}" alt=""></a>
+                    <a href="{{route('landing.home')}}" class="nav-brand"><img src="{{asset('landing/assets/img/logo-img/logo-feb.png')}}" alt="Logo {{env('APP_NAME')}}"></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -52,7 +52,7 @@
                             <!-- Header Add Area -->
                             <div class="header-add-area">
                                 <a href="#">
-                                    <img src="{{asset('landing/assets/img/bg-img/add.png')}}" alt="">
+                                    <img src="{{asset('landing/assets/img/ads-img/banner-top-header.jpg')}}" style="width: 320px; height:80px; object-fit:contain;" alt="Penerimaan Mahasiswa Baru 2024/2025 Universitas Potensi Utama">
                                 </a>
                             </div>
                         </div>

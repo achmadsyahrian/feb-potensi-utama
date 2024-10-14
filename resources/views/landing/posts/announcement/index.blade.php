@@ -69,10 +69,10 @@
                                                         <a href="{{route('landing.announcement.show', $post->slug)}}">
                                                             @if ($post->thumbnail)
                                                                 <img src="{{ asset($post->thumbnail) }}"
-                                                                     style="height:400px; object-fit:cover;" class="img-fluid" alt="">
+                                                                     style="height:400px; object-fit:cover;" class="img-fluid" alt="{{$post->title}}">
                                                             @else
                                                                 <img src="{{ asset('landing/assets/img/logo-img/Logopotensiutama.png') }}"
-                                                                     style="height:400px; object-fit:cover;" alt="">
+                                                                     style="height:400px; object-fit:cover;" alt="Universitas Potensi Utama">
                                                             @endif
                                                         </a>
                                                         <!-- Kategori -->
@@ -97,9 +97,9 @@
                                                             @if ($post->thumbnail)
                                                                 <img src="{{ asset($post->thumbnail) }}"
                                                                 style="height:250px;; object-fit:cover;" class="img-fluid"
-                                                                alt="">
+                                                                {{$post->title}}">
                                                             @else
-                                                                <img src="{{ asset('landing/assets/img/logo-img/Logopotensiutama.png') }}" style="height:250px; object-fit:cover;" alt="">
+                                                                <img src="{{ asset('landing/assets/img/logo-img/Logopotensiutama.png') }}" style="height:250px; object-fit:cover;" alt="Universitas Potensi Utama">
                                                             @endif
                                                         </a>
                                                         <span class="category-label">{{ $post->category->name }}</span>

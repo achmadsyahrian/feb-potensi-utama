@@ -34,7 +34,7 @@
                 <div class="col-12 col-lg-8">
                     <div class="post-details-content mb-100">
                         @if ($post->thumbnail)
-                        <img class="mb-30" src="{{asset($post->thumbnail)}}" style="width:100%; height:400px; object-fit:cover;" alt="">
+                        <img class="mb-30" src="{{asset($post->thumbnail)}}" style="width:100%; height:400px; object-fit:cover;" alt="{{$post->title}}">
                         @endif
                         <div class="content">
                             {!! $post->content !!}

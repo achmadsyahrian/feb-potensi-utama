@@ -14,7 +14,7 @@
    <!-- Add Widget -->
    <div class="single-widget-area add-widget mb-30">
        <a href="#">
-           <img src="{{asset('landing/assets/img/ads-img/banner-daftar-manajemen.jpg')}}" alt="">
+           <img src="{{asset('landing/assets/img/ads-img/banner-daftar-manajemen.jpg')}}" alt="{{env('APP_NAME')}}">
        </a>
    </div>
 
@@ -29,9 +29,9 @@
                        @if ($post->thumbnail)
                            <img src="{{ asset($post->thumbnail) }}"
                            style="height:90px; object-fit:cover;" class="img-fluid"
-                           alt="">
+                           alt="{{$post->title}}">
                        @else
-                           <img src="{{ asset('landing/assets/img/logo-img/Logopotensiutama.png') }}" style="height:90px; object-fit:cover;" alt="">
+                           <img src="{{ asset('landing/assets/img/logo-img/Logopotensiutama.png') }}" style="height:90px; object-fit:cover;" alt="Universitas Potensi Utama>
                        @endif
                    </a>
                </div>

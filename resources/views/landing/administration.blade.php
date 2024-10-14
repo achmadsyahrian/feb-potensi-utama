@@ -81,10 +81,10 @@
                                         <a href="{{ route('landing.news.show', $post->slug) }}">
                                             @if ($post->thumbnail)
                                                 <img src="{{ asset($post->thumbnail) }}"
-                                                    style="height:90px; object-fit:cover;" class="img-fluid" alt="">
+                                                    style="height:90px; object-fit:cover;" class="img-fluid" alt="{{$post->title}}">
                                             @else
                                                 <img src="{{ asset('landing/assets/img/logo-img/Logopotensiutama.png') }}"
-                                                    style="height:90px; object-fit:cover;" alt="">
+                                                    style="height:90px; object-fit:cover;" alt="Universitas Potensi Utama">
                                             @endif
                                         </a>
                                     </div>

@@ -9,7 +9,7 @@
                         <a href="{{route('landing.news.show', $post->slug)}}">
                             @if ($post->thumbnail)
                                 <img src="{{ asset($post->thumbnail) }}" style="height:240px; object-fit:cover;"
-                                    class="img-fluid" alt="">
+                                    class="img-fluid" alt="{{$post->title}}">
                             @else
                                 <img src="{{ asset('landing/assets/img/logo-img/Logopotensiutama.png') }}"
                                     style="height:240px; object-fit:cover;" alt="">
