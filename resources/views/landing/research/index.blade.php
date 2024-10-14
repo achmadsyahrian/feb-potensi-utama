@@ -69,6 +69,11 @@
                                 </div>
                             @endforeach
                         </div>
+
+                        @if ($latestPosts->isEmpty())
+                            <p class="">Tidak ada berita <i class="far fa-sad-cry"></i></p>
+                        @endif
+                        
                     </div>
                 </div>
             </div>

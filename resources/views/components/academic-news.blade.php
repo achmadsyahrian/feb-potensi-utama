@@ -28,6 +28,9 @@
             </div>
         @endforeach
     </div>
+    @if ($latestPosts->isEmpty())
+        <p >Tidak ada berita <i class="far fa-sad-cry"></i></p>
+    @endif
     <div class="col-12">
         <div class="load-more-button text-center">
             <a href="#" class="btn newsbox-btn">Lihat Selengkapnya</a>

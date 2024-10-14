@@ -161,6 +161,10 @@
                                 </div>
                             </div>
                         </div>
+
+                        @if ($latestNewsContent->isEmpty())
+                            <p class="text-center">Tidak ada berita <i class="far fa-sad-cry"></i></p>
+                        @endif
                     </div>
                 </div>
 
@@ -231,6 +235,10 @@
                     </div>
                 @endforeach
 
+                @if ($latestAnnouncementContent->isEmpty())
+                    <p class="mx-auto">Tidak ada pengumuman <i class="far fa-sad-cry"></i></p>
+                @endif
+                
                 <div class="col-12">
                     <div class="load-more-button text-center">
                         <a href="{{route('landing.announcement.index')}}" class="btn newsbox-btn">Lihat Selengkapnya</a>
