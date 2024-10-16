@@ -69,8 +69,8 @@ Route::group(['namespace' => 'Landing', 'as' => 'landing.'], function() {
 
     // Akademik
         // Pengabdian Masyarakat
-        Route::get('/pengabdian-masyarakat', [CommunityController::class, 'index'])->name('community.index');
-        Route::get('/pengabdian-masyarakat/{slug}', [CommunityController::class, 'show'])->name('community.show');
+        // Route::get('/pengabdian-masyarakat', [CommunityController::class, 'index'])->name('community.index');
+        // Route::get('/pengabdian-masyarakat/{slug}', [CommunityController::class, 'show'])->name('community.show');
 
         // Penelitian
         Route::get('/penelitian', function(){

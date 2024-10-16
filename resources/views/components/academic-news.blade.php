@@ -12,7 +12,7 @@
                                     class="img-fluid" alt="{{$post->title}}">
                             @else
                                 <img src="{{ asset('landing/assets/img/logo-img/Logopotensiutama.png') }}"
-                                    style="height:240px; object-fit:cover;" alt="">
+                                    style="height:240px; object-fit:cover;" alt="Universitas Potensi Utama">
                             @endif
                         </a>
                     </div>
