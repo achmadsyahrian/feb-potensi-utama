@@ -4,6 +4,11 @@
 @section('meta_description', 'Program Studi Akuntansi - '. env('APP_NAME'))
 @section('meta_keywords', 'akuntansi upu, akuntansi potensi utama, visi misi akuntansi upu, berita akuntansi potensi utama')
 @section('canonical', env('APP_URL').'/program-studi/akuntansi')
+
+@section('json-ld')
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "EducationalOrganization","name": "Akuntansi","url": "https://feb.potensi-utama.ac.id/program-studi/akuntansi","address": {"@type": "PostalAddress","addressLocality": "Medan","addressRegion": "Sumatera Utara","postalCode": "20241","streetAddress": "Jl. K.L Yos Sudarso, Gg. Famili No.247, Tj. Mulia, Kec. Medan Deli" },"department": {"@type": "EducationalOrganization","name": "Fakultas Ekonomi & Bisnis","url": "https://feb.potensi-utama.ac.id"}}</script>
+@endsection
+
 @section('content')
 
    @include('landing.partials.breaking-news')

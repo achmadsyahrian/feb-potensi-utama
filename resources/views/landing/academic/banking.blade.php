@@ -4,7 +4,9 @@
 @section('meta_description', 'Program Studi Perbankan Syariah - '. env('APP_NAME'))
 @section('meta_keywords', 'ps upu, perbankan syariah potensi utama, visi misi perbankan syariah upu, berita perbankan syariah potensi utama')
 @section('canonical', env('APP_URL').'/program-studi/perbankan-syariah')
-
+@section('json-ld')
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "EducationalOrganization","name": "Perbankan Syariah","url": "https://feb.potensi-utama.ac.id/program-studi/perbankan-syariah","address": {"@type": "PostalAddress","addressLocality": "Medan","addressRegion": "Sumatera Utara","postalCode": "20241","streetAddress": "Jl. K.L Yos Sudarso, Gg. Famili No.247, Tj. Mulia, Kec. Medan Deli" },"department": {"@type": "EducationalOrganization","name": "Fakultas Ekonomi & Bisnis","url": "https://feb.potensi-utama.ac.id"}}</script>
+@endsection
 @section('content')
 
    @include('landing.partials.breaking-news')

@@ -4,7 +4,9 @@
 @section('meta_description', 'Program Studi Ekonomi Syariah - '. env('APP_NAME'))
 @section('meta_keywords', 'eks upu, ekonomi syariah potensi utama, visi misi ekonomi syariah upu, berita ekonomi syariah potensi utama')
 @section('canonical', env('APP_URL').'/program-studi/ekonomi-syariah')
-
+@section('json-ld')
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "EducationalOrganization","name": "Ekonomi Syariah","url": "https://feb.potensi-utama.ac.id/program-studi/ekonomi-syariah","address": {"@type": "PostalAddress","addressLocality": "Medan","addressRegion": "Sumatera Utara","postalCode": "20241","streetAddress": "Jl. K.L Yos Sudarso, Gg. Famili No.247, Tj. Mulia, Kec. Medan Deli" },"department": {"@type": "EducationalOrganization","name": "Fakultas Ekonomi & Bisnis","url": "https://feb.potensi-utama.ac.id"}}</script>
+@endsection
 @section('content')
 
    @include('landing.partials.breaking-news')
