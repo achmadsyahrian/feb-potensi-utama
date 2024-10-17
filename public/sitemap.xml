@@ -1,172 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
     <url>
-        <loc>http://feb-potensi-utama.test</loc>
-        <lastmod>2024-10-10T06:55:55+00:00</lastmod>
+        <loc>https://feb.potensi-utama.ac.id</loc>
+        <lastmod>2024-10-17T02:54:40+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/visi-misi</loc>
-        <lastmod>2024-10-10T06:55:55+00:00</lastmod>
+        <loc>https://feb.potensi-utama.ac.id/visi-misi</loc>
+        <lastmod>2024-10-17T02:54:40+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/ekonomi-syariah</loc>
-        <lastmod>2024-10-10T06:55:55+00:00</lastmod>
+        <loc>https://feb.potensi-utama.ac.id/program-studi/ekonomi-syariah</loc>
+        <lastmod>2024-10-17T02:54:40+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/perbankan-syariah</loc>
-        <lastmod>2024-10-10T06:55:55+00:00</lastmod>
+        <loc>https://feb.potensi-utama.ac.id/program-studi/perbankan-syariah</loc>
+        <lastmod>2024-10-17T02:54:40+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/akuntansi</loc>
-        <lastmod>2024-10-10T06:55:55+00:00</lastmod>
+        <loc>https://feb.potensi-utama.ac.id/program-studi/akuntansi</loc>
+        <lastmod>2024-10-17T02:54:40+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/manajemen</loc>
-        <lastmod>2024-10-10T06:55:55+00:00</lastmod>
+        <loc>https://feb.potensi-utama.ac.id/program-studi/manajemen</loc>
+        <lastmod>2024-10-17T02:54:40+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/berita</loc>
-        <lastmod>2024-10-10T06:55:55+00:00</lastmod>
+        <loc>https://feb.potensi-utama.ac.id/berita</loc>
+        <lastmod>2024-10-17T02:54:40+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/pengumuman</loc>
-        <lastmod>2024-10-10T06:55:55+00:00</lastmod>
+        <loc>https://feb.potensi-utama.ac.id/pengumuman</loc>
+        <lastmod>2024-10-17T02:54:40+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/penelitian</loc>
-        <lastmod>2024-10-10T06:55:55+00:00</lastmod>
+        <loc>https://feb.potensi-utama.ac.id/penelitian</loc>
+        <lastmod>2024-10-17T02:54:40+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/berita/pengumuman-seluruh-mahasiswa</loc>
+        <loc>https://feb.potensi-utama.ac.id/administrasi</loc>
+        <lastmod>2024-10-17T02:54:40+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>https://feb.potensi-utama.ac.id/berita/pengumuman-seluruh-mahasiswa</loc>
         <lastmod>2024-10-08T01:30:02+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/berita/feb-upu-dan-fep-universiti-kebangsaan-malaysia-perkuat-kolaborasi-internasional-dan-nasional</loc>
+        <loc>https://feb.potensi-utama.ac.id/berita/feb-upu-dan-fep-universiti-kebangsaan-malaysia-perkuat-kolaborasi-internasional-dan-nasional</loc>
         <lastmod>2024-10-08T01:36:35+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/berita/lppm-upu-adakan-pengabdian-masyarakat-di-desa-jaring-halus-2</loc>
+        <loc>https://feb.potensi-utama.ac.id/berita/lppm-upu-adakan-pengabdian-masyarakat-di-desa-jaring-halus-2</loc>
         <lastmod>2024-10-08T01:37:02+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/berita/fk-upu-adakan-pelatihan-duta-gizi-sekolah-di-sd-azzakiyah-islamic-leadership</loc>
+        <loc>https://feb.potensi-utama.ac.id/berita/fk-upu-adakan-pelatihan-duta-gizi-sekolah-di-sd-azzakiyah-islamic-leadership</loc>
         <lastmod>2024-10-10T02:52:23+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/pengumuman/pendaftaran-mahasiswa-baru-2026</loc>
+        <loc>https://feb.potensi-utama.ac.id/pengumuman/pendaftaran-mahasiswa-baru-2026</loc>
         <lastmod>2024-10-08T01:38:23+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/pengumuman/mahasiswa-kelas-internasional-upu-ikuti-program-pertukaran-pelajar-di-cagayan-state-university-filipina</loc>
+        <loc>https://feb.potensi-utama.ac.id/pengumuman/mahasiswa-kelas-internasional-upu-ikuti-program-pertukaran-pelajar-di-cagayan-state-university-filipina</loc>
         <lastmod>2024-10-08T02:03:53+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/berita/upu-kucurkan-rp23-m-untuk-214-penerima-hibah-penelitian-internal</loc>
+        <loc>https://feb.potensi-utama.ac.id/berita/upu-kucurkan-rp23-m-untuk-214-penerima-hibah-penelitian-internal</loc>
         <lastmod>2024-10-10T02:39:10+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/pengumuman/fatek-upu-serahkan-mesin-sangrai-kopi-berbasis-iot</loc>
+        <loc>https://feb.potensi-utama.ac.id/pengumuman/fatek-upu-serahkan-mesin-sangrai-kopi-berbasis-iot</loc>
         <lastmod>2024-10-08T02:35:02+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/berita/ivan-berger</loc>
+        <loc>https://feb.potensi-utama.ac.id/berita/ivan-berger</loc>
         <lastmod>2024-10-09T07:18:39+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/berita/nicholas-odom</loc>
+        <loc>https://feb.potensi-utama.ac.id/berita/nicholas-odom</loc>
         <lastmod>2024-10-09T07:18:47+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/berita/yoshi-levy</loc>
+        <loc>https://feb.potensi-utama.ac.id/berita/yoshi-levy</loc>
         <lastmod>2024-10-09T02:00:27+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/berita/taylor-hebert</loc>
+        <loc>https://feb.potensi-utama.ac.id/berita/taylor-hebert</loc>
         <lastmod>2024-10-09T07:19:02+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/berita/declan-macdonald</loc>
+        <loc>https://feb.potensi-utama.ac.id/berita/declan-macdonald</loc>
         <lastmod>2024-10-09T07:18:11+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/berita/gil-gilmore</loc>
+        <loc>https://feb.potensi-utama.ac.id/berita/gil-gilmore</loc>
         <lastmod>2024-10-09T02:01:40+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/berita/adele-montoya</loc>
+        <loc>https://feb.potensi-utama.ac.id/berita/adele-montoya</loc>
         <lastmod>2024-10-09T07:18:02+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/berita/anjolie-kelley</loc>
+        <loc>https://feb.potensi-utama.ac.id/berita/anjolie-kelley</loc>
         <lastmod>2024-10-09T07:18:20+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/berita/warren-morrow</loc>
+        <loc>https://feb.potensi-utama.ac.id/berita/warren-morrow</loc>
         <lastmod>2024-10-09T07:11:28+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/pengumuman/cassidy-burt</loc>
+        <loc>https://feb.potensi-utama.ac.id/pengumuman/cassidy-burt</loc>
         <lastmod>2024-10-09T06:29:01+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/pengumuman/deacon-martin</loc>
+        <loc>https://feb.potensi-utama.ac.id/pengumuman/deacon-martin</loc>
         <lastmod>2024-10-09T06:29:12+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/pengumuman/cecilia-davenport</loc>
+        <loc>https://feb.potensi-utama.ac.id/pengumuman/cecilia-davenport</loc>
         <lastmod>2024-10-09T06:29:51+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/pengumuman/andrew-farmer</loc>
+        <loc>https://feb.potensi-utama.ac.id/pengumuman/andrew-farmer</loc>
         <lastmod>2024-10-09T06:29:47+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/pengumuman/candice-miller</loc>
+        <loc>https://feb.potensi-utama.ac.id/pengumuman/candice-miller</loc>
         <lastmod>2024-10-09T06:30:37+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/pengumuman/marcia-rowland</loc>
+        <loc>https://feb.potensi-utama.ac.id/pengumuman/marcia-rowland</loc>
         <lastmod>2024-10-09T06:30:32+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/pengumuman/lynn-mclean</loc>
+        <loc>https://feb.potensi-utama.ac.id/pengumuman/lynn-mclean</loc>
         <lastmod>2024-10-09T06:30:51+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://feb-potensi-utama.test/berita/ora-nelson</loc>
+        <loc>https://feb.potensi-utama.ac.id/berita/ora-nelson</loc>
         <lastmod>2024-10-10T02:32:32+00:00</lastmod>
 
             </url>

@@ -28,25 +28,25 @@ class GenerateSitemap extends Command
                 ->setPriority(0.8)
             )
             // Ekonomi Syariah
-            ->add(Url::create('/ekonomi-syariah')
+            ->add(Url::create('/program-studi/ekonomi-syariah')
                 ->setLastModificationDate(now())
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
                 ->setPriority(0.8)
             )
             // Perbankan Syariah
-            ->add(Url::create('/perbankan-syariah')
+            ->add(Url::create('/program-studi/perbankan-syariah')
                 ->setLastModificationDate(now())
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
                 ->setPriority(0.8)
             )
             // Akuntansi
-            ->add(Url::create('/akuntansi')
+            ->add(Url::create('/program-studi/akuntansi')
                 ->setLastModificationDate(now())
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
                 ->setPriority(0.8)
             )
             // Manajemen
-            ->add(Url::create('/manajemen')
+            ->add(Url::create('/program-studi/manajemen')
                 ->setLastModificationDate(now())
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
                 ->setPriority(0.8)
@@ -65,6 +65,12 @@ class GenerateSitemap extends Command
             )
             // Penelitian
             ->add(Url::create('/penelitian')
+                ->setLastModificationDate(now())
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+                ->setPriority(0.8)
+            )
+            // Administrasi
+            ->add(Url::create('/administrasi')
                 ->setLastModificationDate(now())
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
                 ->setPriority(0.8)
