@@ -16,7 +16,7 @@
                     <!-- Post Content -->
                     <div class="post-content">
                         <p class="tag"><span>Berita</span></p>
-                        <p class="post-title">{{$post->title}}</p>
+                        <p class="post-title detail-title">{{$post->title}}</p>
                         <div class="d-flex align-items-center">
                             <span class="post-date mr-30">{{ $post->created_at->format('M j, Y') }}</span>
                             <span class="post-date">By {{$post->user->name}}</span>
