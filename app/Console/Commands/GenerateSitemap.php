@@ -63,6 +63,36 @@ class GenerateSitemap extends Command
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
                 ->setPriority(0.9)
             )
+            // Pengumuman
+            ->add(Url::create('/pengumuman/skripsi')
+                ->setLastModificationDate(now())
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
+                ->setPriority(0.9)
+            )
+            // Pengumuman
+            ->add(Url::create('/pengumuman/pkl')
+                ->setLastModificationDate(now())
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
+                ->setPriority(0.9)
+            )
+            // Pengumuman
+            ->add(Url::create('/pengumuman/perwalian')
+                ->setLastModificationDate(now())
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
+                ->setPriority(0.9)
+            )
+            // Pengumuman
+            ->add(Url::create('/pengumuman/krs')
+                ->setLastModificationDate(now())
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
+                ->setPriority(0.9)
+            )
+            // Pengumuman
+            ->add(Url::create('/pengumuman/ujian')
+                ->setLastModificationDate(now())
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
+                ->setPriority(0.9)
+            )
             // Penelitian
             ->add(Url::create('/penelitian')
                 ->setLastModificationDate(now())
