@@ -19,8 +19,8 @@
                 <div class="col-12 col-lg-8">
                     <!-- Post Content -->
                     <div class="post-content">
-                        <p class="tag"><span>Program Studi</span></p>
-                        <p class="post-title">Ekonomi Syariah</p>
+                        <p class="tag"><span>{{__('partials/navbar.navbar.academy')}}</span></p>
+                        <p class="post-title">{{__('partials/navbar.navbar.economics')}}</p>
                         {{-- <div class="d-flex align-items-center">
                             <span class="post-date mr-30">June 20, 2018</span>
                             <span class="post-date">By Michael Smith</span>
@@ -38,592 +38,80 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-12">
                     <div class="post-details-content mb-100">
-                        <h1 class="mb-30">Visi, Misi & Tujuan</h1>
-                        <h4 class="mb-30">Visi</h4>
-                        <p class="mb-0">Visi Program Studi Ekonomi Syariah merupakan pernyataan yang berorientasi ke masa
-                            depan tentang apa yang diharapkan oleh Program Studi Ekonomi Syariah yang dapat dipaparkan
-                            secara jelas.</p>
-                        <p>
-                            “Menjadi pusat kajian Ekonomi Syariah dan kewirausahaan syariah yang unggul di tingkat Nasional
-                            dan mampu berperan aktif ditingkat Internasional pada Tahun 2035”.
-                        </p>
+                        <h1 class="mb-30">{{__('academy/economy.economy.purpose.title')}}</h1>
+                        <h4 class="mb-30">{{__('academy/economy.economy.purpose.subtitle_vision')}}</h4>
+                        <p class="mb-30">{{__('academy/economy.economy.purpose.description_vision')}}</p>
 
-                        <h4 class="mb-30">Misi</h4>
+                        <h4 class="mb-30">{{__('academy/economy.economy.purpose.subtitle_mission')}}</h4>
                         <table class="text-secondary mb-30" style="border-collapse: collapse; width: 100%;">
-                            <tr>
-                                <td style="width: 3%; vertical-align: top;">1.</td>
-                                <td>Menjalankan aktivitas belajar mengajar yang bermutu di dunia Ekonomi Syariah yang
-                                    selaras dengan perubahan sains dan teknologi.</td>
-                            </tr>
-                            <tr>
-                                <td style="vertical-align: top;">2.</td>
-                                <td>Menyelenggarakan riset dalam bidang Ekonomi Syariah yang mampu diterbitkan pada tingkat
-                                    Nasional dan Internasional.</td>
-                            </tr>
-                            <tr>
-                                <td style="vertical-align: top;">3.</td>
-                                <td>Menyelenggarakan pengabdian yang berguna untuk khalayak umum dalam bidang Ekonomi
-                                    Syariah.</td>
-                            </tr>
-                            <tr>
-                                <td style="vertical-align: top;">4.</td>
-                                <td>Memperluas kemitraan dengan dunia usaha dan industri yang selaras untuk pengembangan
-                                    sains bidang Ekonomi Syariah.</td>
-                            </tr>
+                           @foreach (trans('academy/economy.economy.purpose.description_mission') as $key => $mission)
+                                <tr>
+                                    <td style="width: 3%; vertical-align: top;">{{ $key }}</td>
+                                    <td>{{ $mission }}</td>
+                                </tr>
+                            @endforeach
                         </table>
 
-                        <h4 class="mb-30">Tujuan</h4>
-                        <p>Tujuan Program Studi Ekonomi Syariah merupakan rumusan tentang profil kompetensi yang diharapkan
-                            dari lulusan sesuai dengan kebutuhan pemangku kepentingan.</p>
+                        <h4 class="mb-30">{{__('academy/economy.economy.purpose.subtitle_purpose')}}</h4>
+                        <p>{{__('academy/economy.economy.purpose.subtitle_description')}}</p>
                         <table class="text-secondary" style="border-collapse: collapse; width: 100%;">
-                            <tr>
-                                <td style="width: 3%; vertical-align: top;">1.</td>
-                                <td>Menghasilkan lulusan yang dapat memiliki jiwa kompetisi, berpengetahuan dan memiliki
-                                    jiwa wirausaha dalam bidang Ekonomi Syariah dengan menyesuaikan kemajuan sains dan
-                                    Teknologi.</td>
-                            </tr>
-                            <tr>
-                                <td style="vertical-align: top;">2.</td>
-                                <td>Menerbitkan riset dan hasil riset lainnya dalam bidang Ekonomi Syariah yang diterbitkan
-                                    pada level Nasional.</td>
-                            </tr>
-                            <tr>
-                                <td style="vertical-align: top;">3.</td>
-                                <td>Menghasilkan hasil dan capaian pada pengabdian masyarakat di bidang Ekonomi Syariah yang
-                                    diterbitkan pada level Nasional.</td>
-                            </tr>
-                            <tr>
-                                <td style="vertical-align: top;">4.</td>
-                                <td>Menjalin kemitraan dengan masyarakat, dunia usaha dan industri yang bersifat pemerintah
-                                    maupun swasta pada level Internasional.</td>
-                            </tr>
+                           @foreach (trans('academy/economy.economy.purpose.description_purpose') as $key => $mission)
+                              <tr>
+                                 <td style="width: 3%; vertical-align: top;">{{ $key }}</td>
+                                 <td>{{ $mission }}</td>
+                              </tr>
+                           @endforeach
                         </table>
                     </div>
 
                     <div class="post-details-content mb-100">
-                        <h1 class="mb-30">Kurikulum Ekonomi Syariah</h1>
+                        <h1 class="mb-30">{{__('academy/economy.economy.curriculum.title')}}</h1>
                         <div class="col-12 col-lg-12">
                             <div class="accordions mb-50" id="accordion" role="tablist" aria-multiselectable="true">
-                                <!-- Semester 1 -->
-                                <div class="panel single-accordion">
-                                    <h6>
-                                        <a role="button" class="" aria-expanded="true" aria-controls="collapseOne"
-                                            data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                            Semester 1
-                                            <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                            <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                        </a>
-                                    </h6>
-                                    <div id="collapseOne" class="accordion-content collapse ">
-                                        <table style="width: 100%; border-collapse: collapse;">
-                                            <thead>
-                                                <tr>
-                                                    <th class="text-center" style="border: 1px solid #ddd; padding: 8px;">#</th>
-                                                    <th style="border: 1px solid #ddd; padding: 8px;">Mata Kuliah</th>
-                                                    <th class="text-center" style="border: 1px solid #ddd; padding: 8px;">SKS</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">1</td>
-                                                    <td style="border: 1px solid #ddd; padding: 8px;">Pendidikan Pancasila</td>
-                                                    <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                    <td style="border: 1px solid #ddd; padding: 8px;">Bahasa Indonesia</td>
-                                                    <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                    <td style="border: 1px solid #ddd; padding: 8px;">Pengantar EkonomiMikro</td>
-                                                    <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">4</td>
-                                                    <td style="border: 1px solid #ddd; padding: 8px;">Pengantar EkonomiMikro</td>
-                                                    <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">5</td>
-                                                    <td style="border: 1px solid #ddd; padding: 8px;">Pengantar Manajemen dan Bisnis</td>
-                                                    <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">6</td>
-                                                    <td style="border: 1px solid #ddd; padding: 8px;">Bahasa Arab Ekonomi</td>
-                                                    <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">7</td>
-                                                    <td style="border: 1px solid #ddd; padding: 8px;">English I</td>
-                                                    <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">1</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">8</td>
-                                                    <td style="border: 1px solid #ddd; padding: 8px;">Aplikasi Komputer</td>
-                                                    <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">9</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Pengantar Ekonomi Islam
-                                                   </td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;"></td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;"><span style="font-weight: bold;">Total SKS Semester 1</span></td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;"><span style="font-weight: bold;">20</span></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                 @foreach (trans('academy/economy.economy.curriculum.content') as $semester => $courses)
+                                    <div class="panel single-accordion">
+                                       <h6>
+                                             <a role="button" class="" aria-expanded="true" aria-controls="collapse{{ $loop->index }}"
+                                                data-toggle="collapse" data-parent="#accordion" href="#collapse{{ $loop->index }}">
+                                                {{ $semester }}
+                                                <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                                <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                             </a>
+                                       </h6>
+                                       <div id="collapse{{ $loop->index }}" class="accordion-content collapse">
+                                             <table style="width: 100%; border-collapse: collapse;">
+                                                <thead>
+                                                   <tr>
+                                                         <th class="text-center" style="border: 1px solid #ddd; padding: 8px;">#</th>
+                                                         <th style="border: 1px solid #ddd; padding: 8px;">{{__('academy/economy.economy.curriculum.course')}}</th>
+                                                         <th class="text-center" style="border: 1px solid #ddd; padding: 8px;">{{__('academy/economy.economy.curriculum.credit')}}</th>
+                                                   </tr>
+                                                </thead>
+                                                <tbody>
+                                                   @php $totalCredits = 0; @endphp
+                                                   @foreach ($courses as $index => $course)
+                                                       <tr>
+                                                           <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">{{ $loop->iteration }}</td>
+                                                           <td style="border: 1px solid #ddd; padding: 8px;">{{ $course['matkul'] }}</td>
+                                                           <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">{{ $course['credits'] }}</td>
+                                                       </tr>
+                                                       @php $totalCredits += $course['credits']; @endphp
+                                                   @endforeach
+                                                   <tr>
+                                                       <td class="text-center" style="border: 1px solid #ddd; padding: 8px;"></td>
+                                                       <td style="border: 1px solid #ddd; padding: 8px;"><strong>Total</strong></td>
+                                                       <td class="text-center" style="border: 1px solid #ddd; padding: 8px;"><strong>{{ $totalCredits }}</strong></td>
+                                                   </tr>
+                                               </tbody>
+                                             </table>
+                                       </div>
                                     </div>
-                                </div>
-
-                                <!-- Semester 2 -->
-                                <div class="panel single-accordion">
-                                    <h6>
-                                       <a role="button" class="" aria-expanded="true" aria-controls="collapseOne"
-                                          data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                                          Semester 2
-                                          <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                          <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                       </a>
-                                    </h6>
-                                    <div id="collapseTwo" class="accordion-content collapse ">
-                                       <table style="width: 100%; border-collapse: collapse;">
-                                          <thead>
-                                                <tr>
-                                                   <th class="text-center" style="border: 1px solid #ddd; padding: 8px;">#</th>
-                                                   <th style="border: 1px solid #ddd; padding: 8px;">Mata Kuliah</th>
-                                                   <th class="text-center" style="border: 1px solid #ddd; padding: 8px;">SKS</th>
-                                                </tr>
-                                          </thead>
-                                          <tbody>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">1</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Pendidikan Kewarganegaraan</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Etika Bisnis Islam</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Qawaid Fiqhiyyah fil Muamalah</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">4</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">English II</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">1</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">5</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Fiqh Muamalah</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">6</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Ayat dan Hadis Ekonomi</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">7</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Ulumul Qur'an dan Hadis</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">8</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Matematika Ekonomi</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">9</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Ushul Fiqh fil Muamalah</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;"></td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;"><span style="font-weight: bold;">Total SKS Semester 2</span></td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;"><span style="font-weight: bold;">20</span></td>
-                                                </tr>
-                                          </tbody>
-                                       </table>
-                                    </div>
-                                </div>
-
-                                 <!-- Semester 3 -->
-                                 <div class="panel single-accordion">
-                                    <h6>
-                                       <a role="button" class="" aria-expanded="true" aria-controls="collapseOne"
-                                          data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                                          Semester 3
-                                          <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                          <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                       </a>
-                                    </h6>
-                                    <div id="collapseThree" class="accordion-content collapse ">
-                                       <table style="width: 100%; border-collapse: collapse;">
-                                          <thead>
-                                                <tr>
-                                                   <th class="text-center" style="border: 1px solid #ddd; padding: 8px;">#</th>
-                                                   <th style="border: 1px solid #ddd; padding: 8px;">Mata Kuliah</th>
-                                                   <th class="text-center" style="border: 1px solid #ddd; padding: 8px;">SKS</th>
-                                                </tr>
-                                          </thead>
-                                          <tbody>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">1</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Ekonomi Mikro Islam</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Bank dan Lembaga Keuangan Syariah</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Statistika I</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">4</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Pengantar Akuntansi</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">5</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Sejarah Pemikiran Ekonomi Islam</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">6</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Teori dan Perilaku Organisasi</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">7</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Kewirausahaan dan Bisnis Islam</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">8</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Fiqh Muamalah Kontemporer</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;"></td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;"><span style="font-weight: bold;">Total SKS Semester 3</span></td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;"><span style="font-weight: bold;">20</span></td>
-                                                </tr>
-                                          </tbody>
-                                       </table>
-                                    </div>
-                                 </div>
-
-                                 {{-- Semester 4 --}}
-                                 <div class="panel single-accordion">
-                                    <h6>
-                                       <a role="button" class="" aria-expanded="true" aria-controls="collapseOne"
-                                          data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-                                          Semester 4
-                                          <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                          <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                       </a>
-                                    </h6>
-                                    <div id="collapseFour" class="accordion-content collapse ">
-                                       <table style="width: 100%; border-collapse: collapse;">
-                                          <thead>
-                                                <tr>
-                                                   <th class="text-center" style="border: 1px solid #ddd; padding: 8px;">#</th>
-                                                   <th style="border: 1px solid #ddd; padding: 8px;">Mata Kuliah</th>
-                                                   <th class="text-center" style="border: 1px solid #ddd; padding: 8px;">SKS</th>
-                                                </tr>
-                                          </thead>
-                                          <tbody>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">1</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Manajemen ZISWAF</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Ekonomi Makro Islam</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Sosiologi Ekonomi</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">4</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Ekonomi Pembangunan Islam</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">5</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Statistika II</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">6</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Akuntansi Syariah</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">7</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Manajemen SDI</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">8</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Praktik Akuntansi</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;"></td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;"><span style="font-weight: bold;">Total SKS Semester 4</span></td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;"><span style="font-weight: bold;">20</span></td>
-                                                </tr>
-                                          </tbody>
-                                       </table>
-                                    </div>
-                                 </div>
-
-                                 {{-- Semester 5 --}}
-                                 <div class="panel single-accordion">
-                                    <h6>
-                                       <a role="button" class="" aria-expanded="true" aria-controls="collapseOne"
-                                          data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
-                                          Semester 5
-                                          <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                          <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                       </a>
-                                    </h6>
-                                    <div id="collapseFive" class="accordion-content collapse ">
-                                       <table style="width: 100%; border-collapse: collapse;">
-                                          <thead>
-                                                <tr>
-                                                   <th class="text-center" style="border: 1px solid #ddd; padding: 8px;">#</th>
-                                                   <th style="border: 1px solid #ddd; padding: 8px;">Mata Kuliah</th>
-                                                   <th class="text-center" style="border: 1px solid #ddd; padding: 8px;">SKS</th>
-                                                </tr>
-                                          </thead>
-                                          <tbody>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">1</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Ekonometrika</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Manajemen Pemasaran Syariah</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Studi Kelayakan Bisnis Syariah</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">4</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Perekonomian Indonesia</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">5</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Ekonomi Moneter Syariah</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">6</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Keuangan Publik Syariah</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">7</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Inovasi Produk Lembaga Keuangan Syariah</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;"></td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;"><span style="font-weight: bold;">Total SKS Semester 5</span></td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;"><span style="font-weight: bold;">20</span></td>
-                                                </tr>
-                                          </tbody>
-                                       </table>
-                                    </div>
-                                 </div>
-
-                                 {{-- Semester 6 --}}
-                                 <div class="panel single-accordion">
-                                    <h6>
-                                       <a role="button" class="" aria-expanded="true" aria-controls="collapseOne"
-                                          data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
-                                          Semester 6
-                                          <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                          <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                       </a>
-                                    </h6>
-                                    <div id="collapseSix" class="accordion-content collapse ">
-                                       <table style="width: 100%; border-collapse: collapse;">
-                                          <thead>
-                                                <tr>
-                                                   <th class="text-center" style="border: 1px solid #ddd; padding: 8px;">#</th>
-                                                   <th style="border: 1px solid #ddd; padding: 8px;">Mata Kuliah</th>
-                                                   <th class="text-center" style="border: 1px solid #ddd; padding: 8px;">SKS</th>
-                                                </tr>
-                                          </thead>
-                                          <tbody>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">1</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Penganggaran</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Metodelogi Penelitian Ekonomi</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Ekonomi Regional</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">4</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Sistem Informasi Manajemen</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">5</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Ekonomi Internasional</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">6</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Pasar Keuangan Syariah</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">7</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Mata kuliah Peminatan 1</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">8</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Mata kuliah Peminatan 2</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">9</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Mata kuliah Pilhan</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;"></td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;"><span style="font-weight: bold;">Total SKS Semester 6</span></td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;"><span style="font-weight: bold;">20</span></td>
-                                                </tr>
-                                          </tbody>
-                                       </table>
-                                    </div>
-                                 </div>
-                                 
-                                 {{-- Semester 7 --}}
-                                 <div class="panel single-accordion">
-                                    <h6>
-                                       <a role="button" class="" aria-expanded="true" aria-controls="collapseOne"
-                                          data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">
-                                          Semester 7
-                                          <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                          <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                       </a>
-                                    </h6>
-                                    <div id="collapseSeven" class="accordion-content collapse ">
-                                       <table style="width: 100%; border-collapse: collapse;">
-                                          <thead>
-                                                <tr>
-                                                   <th class="text-center" style="border: 1px solid #ddd; padding: 8px;">#</th>
-                                                   <th style="border: 1px solid #ddd; padding: 8px;">Mata Kuliah</th>
-                                                   <th class="text-center" style="border: 1px solid #ddd; padding: 8px;">SKS</th>
-                                                </tr>
-                                          </thead>
-                                          <tbody>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">1</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Perpajakan</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Praktik Bank Mini Syariah</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">3</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Ekonomi Politik Islam</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">4</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Perilaku Konsumen</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">2</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;"></td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;"><span style="font-weight: bold;">Total SKS Semester 7</span></td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;"><span style="font-weight: bold;">10</span></td>
-                                                </tr>
-                                          </tbody>
-                                       </table>
-                                    </div>
-                                 </div>
-
-                                 {{-- Semester 8 --}}
-                                 <div class="panel single-accordion">
-                                    <h6>
-                                       <a role="button" class="" aria-expanded="true" aria-controls="collapseOne"
-                                          data-toggle="collapse" data-parent="#accordion" href="#collapseEight">
-                                          Semester 8
-                                          <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                          <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                       </a>
-                                    </h6>
-                                    <div id="collapseEight" class="accordion-content collapse ">
-                                       <table style="width: 100%; border-collapse: collapse;">
-                                          <thead>
-                                                <tr>
-                                                   <th class="text-center" style="border: 1px solid #ddd; padding: 8px;">#</th>
-                                                   <th style="border: 1px solid #ddd; padding: 8px;">Mata Kuliah</th>
-                                                   <th class="text-center" style="border: 1px solid #ddd; padding: 8px;">SKS</th>
-                                                </tr>
-                                          </thead>
-                                          <tbody>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">1</td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;">Skripsi</td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;">6</td>
-                                                </tr>
-                                                <tr>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;"></td>
-                                                   <td style="border: 1px solid #ddd; padding: 8px;"><span style="font-weight: bold;">Total SKS Semester 8</span></td>
-                                                   <td class="text-center" style="border: 1px solid #ddd; padding: 8px;"><span style="font-weight: bold;">6</span></td>
-                                                </tr>
-                                          </tbody>
-                                       </table>
-                                    </div>
-                                 </div>
+                                 @endforeach
                             </div>
                             <table style="width: 100%; border-collapse: collapse;">
                               <thead>
                                   <tr>
-                                    <th style="border: 0 solid #ddd; padding: 8px; text-align: right;">Total Seluruh SKS:</th>
+                                    <th style="border: 0 solid #ddd; padding: 8px; text-align: right;">{{__('academy/economy.economy.curriculum.total_credits')}}</th>
                                     <th style="border: 0 solid #ddd; padding: 8px; text-align: center;">136</th>
                                   </tr>
                               </thead>

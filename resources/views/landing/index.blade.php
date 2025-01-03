@@ -35,8 +35,10 @@
 
                                     <!-- Blog Content -->
                                     <div class="blog-content">
-                                        <span class="post-date">{{ $latestNews[0]->created_at->format('M j, Y') }}</span>
-                                        <a href="{{route('landing.news.show', $latestNews[0]->slug)}}" class="post-title">{{ \Illuminate\Support\Str::limit($latestNews[0]->title, 80, '...') }}</a>
+                                        <span class="post-date">{{ \Carbon\Carbon::parse($latestNews[0]->date)->format('M j, Y') }}</span>
+                                        <a href="{{route('landing.news.show', $latestNews[0]->slug)}}" class="post-title">
+                                            {{ app()->getLocale() == 'en' ? \Illuminate\Support\Str::limit($latestNews[0]->title_en, 80, '...') : \Illuminate\Support\Str::limit($latestNews[0]->title, 80, '...') }}
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -60,8 +62,10 @@
 
                                     <!-- Blog Content -->
                                     <div class="blog-content">
-                                        <span class="post-date">{{ $latestNews[1]->created_at->format('M j, Y') }}</span>
-                                        <a href="{{route('landing.news.show', $latestNews[1]->slug)}}" class="post-title">{{ \Illuminate\Support\Str::limit($latestNews[1]->title, 80, '...') }}</a>
+                                        <span class="post-date">{{ \Carbon\Carbon::parse($latestNews[1]->date)->format('M j, Y') }}</span>
+                                        <a href="{{route('landing.news.show', $latestNews[1]->slug)}}" class="post-title">
+                                            {{ app()->getLocale() == 'en' ? \Illuminate\Support\Str::limit($latestNews[1]->title_en, 80, '...') : \Illuminate\Support\Str::limit($latestNews[1]->title, 80, '...') }}
+                                        </a>
                                     </div>
                                 </div>
                                 <!-- Single Blog Post Area -->
@@ -82,8 +86,10 @@
 
                                     <!-- Blog Content -->
                                     <div class="blog-content">
-                                        <span class="post-date">{{ $latestNews[2]->created_at->format('M j, Y') }}</span>
-                                        <a href="{{route('landing.news.show', $latestNews[2]->slug)}}" class="post-title">{{ \Illuminate\Support\Str::limit($latestNews[2]->title, 80, '...') }}</a>
+                                        <span class="post-date">{{ \Carbon\Carbon::parse($latestNews[2]->date)->format('M j, Y') }}</span>
+                                        <a href="{{route('landing.news.show', $latestNews[2]->slug)}}" class="post-title">
+                                            {{ app()->getLocale() == 'en' ? \Illuminate\Support\Str::limit($latestNews[2]->title_en, 80, '...') : \Illuminate\Support\Str::limit($latestNews[2]->title, 80, '...') }}
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -104,7 +110,7 @@
 
                         <!-- Intro News Filter -->
                         <div class="intro-news-filter d-flex justify-content-between">
-                            <h6>Berita Terkini</h6>
+                            <h6>{{__('home.home.news.title')}}</h6>
                         </div>
 
                         <div class="tab-content" id="nav-tabContent">
@@ -130,8 +136,10 @@
 
                                                     <!-- Blog Content -->
                                                     <div class="blog-content">
-                                                        <span class="post-date">{{ $post->created_at->format('M j, Y') }}</span>
-                                                        <a href="{{route('landing.news.show', $post->slug)}}" class="post-title" title="{{$post->title}}">{{ \Illuminate\Support\Str::limit($post->title, 50, '...') }}</a>
+                                                        <span class="post-date">{{ \Carbon\Carbon::parse($post->date)->format('M j, Y') }}</span>
+                                                        <a href="{{route('landing.news.show', $post->slug)}}" class="post-title" title="{{ app()->getLocale() == 'en' ? $post->title_en : $post->title }}">
+                                                            {{ app()->getLocale() == 'en' ? \Illuminate\Support\Str::limit($post->title_en, 50, '...') : \Illuminate\Support\Str::limit($post->title, 50, '...') }}
+                                                        </a>
                                                         <a href="{{route('landing.news.show', $post->slug)}}" class="post-author">By {{$post->user->name}}</a>
                                                     </div>
                                                 </div>
@@ -154,8 +162,10 @@
     
                                                     <!-- Blog Content -->
                                                     <div class="blog-content">
-                                                        <span class="post-date">{{ $post->created_at->format('M j, Y') }}</span>
-                                                        <a href="{{route('landing.news.show', $post->slug)}}" class="post-title" title="{{$post->title}}">{{ \Illuminate\Support\Str::limit($post->title, 50, '...') }}</a>
+                                                        <span class="post-date">{{ \Carbon\Carbon::parse($post->date)->format('M j, Y') }}</span>
+                                                        <a href="{{route('landing.news.show', $post->slug)}}" class="post-title" title="{{ app()->getLocale() == 'en' ? $post->title_en : $post->title }}">
+                                                            {{ app()->getLocale() == 'en' ? \Illuminate\Support\Str::limit($post->title_en, 50, '...') : \Illuminate\Support\Str::limit($post->title, 50, '...') }}
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -166,7 +176,7 @@
                         </div>
 
                         @if ($latestNewsContent->isEmpty())
-                            <p class="text-center">Tidak ada berita <i class="far fa-sad-cry"></i></p>
+                            <p class="text-center">{{__('home.home.news.empty')}} <i class="far fa-sad-cry"></i></p>
                         @endif
                     </div>
                 </div>
@@ -205,7 +215,7 @@
                             </a>
 
                             <span class="published-date">19 Des, 2019</span>
-                            <h3 class="video-title">Peresmian Galeri Investasi UPU</h3>
+                            <h3 class="video-title">{{__('home.home.video.title')}}</h3>
                         </div>
                     </div>
                 </div>
@@ -219,7 +229,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="elements-title mb-30 text-center">
-                        <h1>Pengumuman</h1>
+                        <h1>{{__('home.home.announcement.title')}}</h1>
                     </div>
                 </div>
             </div>
@@ -230,8 +240,10 @@
                     <div class="col-12 col-sm-6 col-lg-4">
                         <div class="single-blog-post style-2 mb-5">
                             <div class="blog-content">
-                                <span class="post-date">{{ $post->created_at->format('M j, Y') }}</span>
-                                <a href="{{route('landing.announcement.show', $post->slug)}}" class="post-title" title="{{$post->title}}">{{ \Illuminate\Support\Str::limit($post->title, 50, '...') }}</a>
+                                <span class="post-date">{{ \Carbon\Carbon::parse($post->date)->format('M j, Y') }}</span>
+                                <a href="{{route('landing.announcement.show', $post->slug)}}" class="post-title" title="{{ app()->getLocale() == 'en' ? $post->title_en : $post->title }}">
+                                    {{ app()->getLocale() == 'en' ? \Illuminate\Support\Str::limit($post->title_en, 50, '...') : \Illuminate\Support\Str::limit($post->title, 50, '...') }}
+                                </a>
                                 <a href="{{route('landing.announcement.show', $post->slug)}}" class="post-author">By {{$post->user->name}}</a>
                             </div>
                         </div>
@@ -239,12 +251,12 @@
                 @endforeach
 
                 @if ($latestAnnouncementContent->isEmpty())
-                    <p class="mx-auto">Tidak ada pengumuman <i class="far fa-sad-cry"></i></p>
+                    <p class="mx-auto">{{__('home.home.announcement.empty')}} <i class="far fa-sad-cry"></i></p>
                 @endif
                 
                 <div class="col-12">
                     <div class="load-more-button text-center">
-                        <a href="{{route('landing.announcement.index')}}" class="btn newsbox-btn">Lihat Selengkapnya</a>
+                        <a href="{{route('landing.announcement.index')}}" class="btn newsbox-btn">{{__('home.home.announcement.load_more')}}</a>
                     </div>
                 </div>
 
@@ -262,7 +274,7 @@
 
     <div class="col-12">
         <div class="elements-title mb-30 text-center">
-            <h2>Keanggotaan dan Kerjasama</h2>
+            <h2>{{__('home.home.collaboration.title')}}</h2>
         </div>
     </div>
     <section class="video-area bg-img bg-fixed"
